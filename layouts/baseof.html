@@ -8,7 +8,7 @@
         content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
     <meta name="author" content="{{ .Site.Params.author }}">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="{{ " /css/style.css" | relURL }}">
+    <link rel="stylesheet" href="{{ " /css/style.css" | absURL }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 
@@ -105,7 +105,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="{{ " /js/script.js" | relURL }}"></script>
+    <script src="{{ " /js/script.js" | absURL }}"></script>
     <script>
         AOS.init({
             duration: 800,
