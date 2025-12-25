@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="list-title" style="margin-bottom: 30px;">
+    <h1>Danh sách bài viết</h1>
+</div>
+<div class="blog-grid">
+    {{ range .Pages }}
+    <article class="featured-article" data-aos="fade-up">
+        <div class="article-content" style="padding: 1.5rem;">
+            <span class="article-category">Technology</span>
+            <h2 class="article-title" style="font-size: 1.4rem;"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <div class="article-meta">
+                <span>{{ .Date.Format "02/01/2006" }}</span>
+            </div>
+            <p class="article-excerpt" style="font-size: 0.95rem;">{{ .Summary }}</p>
+            <a href="{{ .RelPermalink }}" class="read-more" style="font-size: 0.9rem;">Đọc thêm →</a>
+        </div>
+    </article>
+    {{ end }}
+</div>
+{{ end }}

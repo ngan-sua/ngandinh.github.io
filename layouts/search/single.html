@@ -1,0 +1,180 @@
+{{ define "main" }}
+<div class="search-page-container" data-aos="fade-up">
+    <div class="search-page-header">
+        <h1 class="single-post-title">Tìm kiếm bài viết</h1>
+        <div class="search-form-refined">
+            <input type="text" id="search-input-page" placeholder="Nhập từ khóa cần tìm..." autocomplete="off">
+            <div id="search-status" class="search-status">Đang tải dữ liệu...</div>
+        </div>
+    </div>
+
+    <div id="search-results-page" class="search-results-page">
+        <!-- Results will appear here -->
+        <div class="search-placeholder-full">Đang tìm kiếm...</div>
+    </div>
+</div>
+
+<style>
+    .search-page-container {
+        padding: 2rem 0;
+    }
+
+    .search-page-header {
+        margin-bottom: 3rem;
+        background: var(--bg-card);
+        padding: 3rem;
+        border-radius: 24px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-form-refined {
+        position: relative;
+        margin-top: 1.5rem;
+    }
+
+    .search-form-refined input {
+        width: 100%;
+        background: var(--bg-navbar);
+        border: 1px solid var(--border-color);
+        padding: 20px 25px;
+        border-radius: 16px;
+        color: var(--text-primary);
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        outline: none;
+    }
+
+    .search-form-refined input:focus {
+        border-color: var(--accent-cyan);
+        box-shadow: 0 0 20px var(--cyan-glow);
+    }
+
+    .search-status {
+        margin-top: 10px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+
+    .search-results-page {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .search-card-refined {
+        background: var(--bg-card);
+        padding: 2rem;
+        border-radius: 20px;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: block;
+    }
+
+    .search-card-refined:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-cyan);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .search-card-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .search-card-meta {
+        font-size: 0.85rem;
+        color: var(--accent-cyan);
+        margin-bottom: 1rem;
+        display: flex;
+        gap: 15px;
+    }
+
+    .search-card-summary {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        font-size: 1rem;
+    }
+
+    .search-placeholder-full {
+        text-align: center;
+        padding: 5rem;
+        color: var(--text-muted);
+        font-style: italic;
+        font-size: 1.2rem;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const input = document.getElementById('search-input-page');
+        const resultsContainer = document.getElementById('search-results-page');
+        const status = document.getElementById('search-status');
+
+        let searchIndex = null;
+
+        // Fetch index
+        try {
+            const response = await fetch('/index.json');
+            searchIndex = await response.json();
+            status.textContent = `${searchIndex.length} bài viết đã sẵn sàng tìm kiếm.`;
+
+            // Check for URL query
+            const urlParams = new URLSearchParams(window.location.search);
+            const initialQuery = urlParams.get('q');
+            if (initialQuery) {
+                input.value = initialQuery;
+                performSearch(initialQuery);
+            } else {
+                resultsContainer.innerHTML = '<div class="search-placeholder-full">Nhập từ khóa ở trên để bắt đầu tìm kiếm...</div>';
+            }
+        } catch (err) {
+            console.error('Failed to load search index:', err);
+            status.textContent = 'Lỗi tải dữ liệu tìm kiếm.';
+        }
+
+        input.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            performSearch(query);
+        });
+
+        function performSearch(query) {
+            if (!searchIndex) return;
+            if (!query) {
+                resultsContainer.innerHTML = '<div class="search-placeholder-full">Nhập từ khóa ở trên để bắt đầu tìm kiếm...</div>';
+                return;
+            }
+
+            const q = query.toLowerCase();
+            const results = searchIndex.filter(item =>
+                item.title.toLowerCase().includes(q) ||
+                item.content.toLowerCase().includes(q) ||
+                item.summary.toLowerCase().includes(q)
+            );
+
+            renderResults(results, query);
+        }
+
+        function renderResults(results, query) {
+            if (results.length === 0) {
+                resultsContainer.innerHTML = `<div class="search-placeholder-full">Không tìm thấy bài viết nào cho từ khóa: "${query}"</div>`;
+                return;
+            }
+
+            resultsContainer.innerHTML = results.map(item => `
+            <a href="${item.url}" class="search-card-refined">
+                <div class="search-card-title">${item.title}</div>
+                <div class="search-card-meta">
+                    <span>📅 ${item.date}</span>
+                    <span>📂 ${item.categories.join(', ')}</span>
+                </div>
+                <div class="search-card-summary">${item.summary}</div>
+            </a>
+        `).join('');
+        }
+    });
+</script>
+{{ end }}

@@ -1,0 +1,65 @@
+<aside class="sidebar">
+    <!-- Search Widget -->
+    <div class="sidebar-widget">
+        <h3 class="widget-title">Tìm kiếm</h3>
+        <form action="/search/" method="get">
+            <input type="text" name="q" class="search-box" placeholder="Nhập từ khóa...">
+        </form>
+    </div>
+
+    <!-- Modern Profile Card -->
+    <div class="sidebar-widget profile-card-modern">
+        <img src="/images/avatar.jpg" alt="Trương Đình Ngân" class="modern-avatar">
+        <h3 class="widget-title" style="border:none; padding:0; margin-bottom: 5px;">About Me</h3>
+        <h4 class="modern-name">Trương Đình Ngân</h4>
+        <p class="modern-bio">
+            Sinh viên năm thứ 4 chuyên ngành Công nghệ thông tin tại Trường Đại học Công nghệ TP.HCM (HUTECH).
+            Mình đam mê tìm hiểu về lập trình mạng, bảo mật và xây dựng các hệ thống phần mềm hiệu quả.
+        </p>
+
+        <div class="modern-meta">
+            <div class="meta-item">
+                <i class="icon">📧</i> ngan77pro@gmail.com
+            </div>
+            <div class="meta-item">
+                <i class="icon">📞</i> 0813439579
+            </div>
+        </div>
+
+        <div class="modern-socials">
+            <a href="https://github.com/username" class="social-icon-sm">git</a>
+            <a href="https://www.tiktok.com/@nganne77?is_from_webapp=1&sender_device=pc"
+                class="social-icon-sm">Tiktok</a>
+            <a href="https://www.facebook.com/share/1W6XR4GnKL/?mibextid=wwXIfr" class="social-icon-sm">fb</a>
+        </div>
+    </div>
+
+    <!-- Recent Posts Widget -->
+    <div class="sidebar-widget">
+        <h3 class="widget-title">Bài viết mới nhất</h3>
+        <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+            {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+            <li style="margin-bottom: 12px;">
+                <a href="{{ .RelPermalink }}"
+                    style="color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px;">{{ .Title
+                    }}</a>
+                <span style="font-size: 0.8rem; opacity: 0.6;">📅 {{ .Date.Format "02/01/2006" }}</span>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    <!-- Categories Widget -->
+    <div class="sidebar-widget">
+        <h3 class="widget-title">Chuyên mục</h3>
+        <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+            {{ range .Site.Taxonomies.categories }}
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="{{ .Page.RelPermalink }}" style="color: inherit; transition: var(--transition);">{{ .Page.Title
+                    }}</a>
+                <span style="opacity: 0.5;">({{ .Count }})</span>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</aside>

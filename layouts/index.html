@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="home-articles">
+    {{ range $index, $page := first 5 (where .Site.RegularPages "Section" "posts") }}
+    <article class="featured-article" data-aos="fade-up">
+        <div class="article-image">
+            {{ $img := "/images/networking_thumb.png" }}
+            {{ if eq (mod $index 3) 1 }}{{ $img = "/images/coding_thumb.png" }}{{ end }}
+            {{ if eq (mod $index 3) 2 }}{{ $img = "/images/security_thumb.png" }}{{ end }}
+            <img src="{{ $img }}" alt="{{ .Title }}">
+        </div>
+        <div class="article-content">
+            <span class="article-category">Technology & Development</span>
+            <h2 class="article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <div class="article-meta">
+                <span>📅 {{ .Date.Format "02/01/2006" }}</span>
+                <span>⏱️ Reading time: {{ .ReadingTime }} min</span>
+                <span>📂
+                    {{ range .Params.categories }}
+                    <a href="{{ " categories/" | relLangURL }}{{ . | urlize }}" class="category-badge">{{ . }}</a>
+                    {{ end }}
+                </span>
+            </div>
+            <p class="article-excerpt">{{ .Content | plainify | truncate 240 }}</p>
+            <a href="{{ .RelPermalink }}" class="read-more">Đọc thêm →</a>
+        </div>
+    </article>
+    {{ end }}
+</div>
+{{ end }}

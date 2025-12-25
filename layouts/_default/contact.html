@@ -1,0 +1,64 @@
+{{ define "main" }}
+<div class="contact-page-wrapper" data-aos="fade-up">
+    <!-- Header Section -->
+    <div class="contact-hero">
+        <h1 class="contact-title-main">CONTACT</h1>
+        <p class="contact-subtitle">Liên hệ & Góp ý</p>
+        <p class="contact-intro">
+            Chào mừng bạn đến với mục góp ý! Nếu bạn có bất kỳ thắc mắc hoặc phản hồi nào về nội dung trên blog, vui
+            lòng để lại lời nhắn bên dưới cho mình nhé.
+        </p>
+    </div>
+
+    <!-- Simplified Form Section -->
+    <div class="contact-form-container">
+        <div id="success-message">
+            <div class="success-icon">✓</div>
+            <h2 class="success-title">Cảm ơn bạn!</h2>
+            <p class="success-text">Phản hồi của bạn đã được gửi thành công. Mình sẽ phản hồi sớm nhất có thể.</p>
+        </div>
+
+        <form id="contact-form" action="#" method="POST">
+            <h3 class="widget-title" style="border:none; padding:0; margin-bottom: 2rem; font-size: 1.5rem;">Gửi phản
+                hồi
+                của bạn</h3>
+            <div class="form-grid">
+                <div class="form-field">
+                    <label>Tên</label>
+                    <input type="text" id="name" class="form-input-refined" placeholder="Nhập tên của bạn" required>
+                </div>
+                <div class="form-field">
+                    <label>Gmail</label>
+                    <input type="email" id="email" class="form-input-refined" placeholder="Nhập địa chỉ Gmail" required>
+                </div>
+                <div class="form-field full">
+                    <label>Nội dung</label>
+                    <textarea id="message" class="form-input-refined" rows="8" placeholder="Nội dung bạn muốn góp ý..."
+                        required></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn-submit-modern">Gửi phản hồi</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const btn = this.querySelector('.btn-submit-modern');
+        if (btn.disabled) return;
+
+        // Simulate sending
+        btn.innerText = 'Đang gửi...';
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+
+        setTimeout(() => {
+            // Hide form and show success message
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        }, 1500);
+    });
+</script>
+{{ end }}

@@ -1,0 +1,34 @@
+baseURL = "/"
+languageCode = "vi"
+title = "ĐÌNH NGÂN BLOG"
+theme = "minimal"
+[outputs]
+  home = ["html", "json"]
+
+[params]
+  description = "Tận tâm chia sẻ kiến thức chuyên sâu về Lập trình Mạng, Java, JavaScript và các công nghệ mới nhất."
+  author = "Trương Đình Ngân"
+  social_fb = "https://facebook.com/truongdinhngan.it"
+  social_gh = "https://github.com/dinhngan-it"
+  social_tt = "https://tiktok.com/@dinhngan.it"
+  email = "contact@dinhngan.it"
+  location = "Hà Nội, Việt Nam"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

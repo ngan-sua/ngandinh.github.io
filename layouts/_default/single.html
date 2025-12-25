@@ -1,0 +1,52 @@
+{{ define "main" }}
+<article class="single-post-card"
+    style="background: var(--bg-card); padding: 3rem; border-radius: 20px; border: 1px solid var(--border-color);">
+    <nav class="breadcrumb">
+        <a href="/">Trang chủ</a> &raquo;
+        <a href="/posts/">Bài viết</a> &raquo;
+        <span>{{ .Title }}</span>
+    </nav>
+
+    <div class="single-post-header">
+        <span class="article-category">Detailed Insights</span>
+        <h1 class="single-post-title">{{ .Title }}</h1>
+        <div class="article-meta">
+            <span>📅 {{ .Date.Format "02/01/2006" }}</span>
+            <span>⏱️ {{ .ReadingTime }} phút đọc</span>
+            {{ with .Params.categories }}
+            <span class="meta-divider">|</span>
+            <span>📂
+                {{ range . }}
+                <a href="{{ " categories/" | relLangURL }}{{ . | urlize }}" class="category-badge">{{ . }}</a>
+                {{ end }}
+            </span>
+            {{ end }}
+        </div>
+    </div>
+
+    {{ if .TableOfContents }}
+    <div class="post-toc">
+        <h4 class="toc-title">Mục lục</h4>
+        {{ .TableOfContents }}
+    </div>
+    {{ end }}
+    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+    <div class="post-content-inner">
+        {{ .Content }}
+    </div>
+
+    <!-- Author Bio Section -->
+    <div class="author-bio-card">
+        <div class="author-bio-info">
+            <h4 class="author-bio-name">{{ .Site.Params.author }}</h4>
+            <p class="author-bio-text">Chuyên gia về Lập trình Mạng và Phát triển Phần mềm. Đam mê chia sẻ kiến thức
+                cộng đồng và xây dựng các giải pháp công nghệ hiện đại. Cùng kết nối và học hỏi tại Blog này nhé!</p>
+            <div class="author-bio-links">
+                <a href="{{ .Site.Params.social_fb }}" class="author-social-link">Facebook</a>
+                <a href="{{ .Site.Params.social_gh }}" class="author-social-link">GitHub</a>
+                <a href="/contact/" class="author-social-link">Liên hệ</a>
+            </div>
+        </div>
+    </div>
+</article>
+{{ end }}

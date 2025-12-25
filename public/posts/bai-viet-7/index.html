@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mạng máy tính là môi trường mở, nơi dữ liệu luôn phải di chuyển qua nhiều thiết bị trung gian. Nếu không được bảo vệ đúng cách, thông tin có thể bị đánh cắp, chỉnh sửa hoặc giả mạo mà người dùng không hề hay biết.
+1. Tổng quan về bảo mật trong lập trình mạng
+Bảo mật mạng tập trung vào việc bảo vệ dữ liệu khi truyền tải và ngăn chặn các truy cập trái phép vào hệ thống.
+Lập trình viên cần hiểu rằng mọi dữ liệu đến từ mạng đều không đáng tin cậy cho đến khi được kiểm chứng.">
+    <meta name="author" content="Trương Đình Ngân">
+    <title>Bảo mật cơ bản trong lập trình mạng | ĐÌNH NGÂN BLOG</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo-group">
+                <div class="logo-icon">N</div>
+                <div class="logo-text">
+                    <h1>ĐÌNH NGÂN BLOG</h1>
+                    <p>Tận tâm chia sẻ kiến thức chuyên sâu về Lập trình Mạng, Java, JavaScript và các công nghệ mới nhất.</p>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    
+                    <li><a href="/">Home</a></li>
+                    
+                    <li><a href="/about/">About</a></li>
+                    
+                    <li><a href="/contact/">Contact</a></li>
+                    
+                    <li><a href="/categories/">Categories</a></li>
+                    <li class="nav-search-item">
+                        <form action="/search/" method="get" class="nav-search-form">
+                            <input type="text" name="q" class="nav-search-input" placeholder="Tìm kiếm bài viết...">
+                            <button type="submit" class="nav-search-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-wrapper">
+            <main>
+                
+<article class="single-post-card"
+    style="background: var(--bg-card); padding: 3rem; border-radius: 20px; border: 1px solid var(--border-color);">
+    <nav class="breadcrumb">
+        <a href="/">Trang chủ</a> &raquo;
+        <a href="/posts/">Bài viết</a> &raquo;
+        <span>Bảo mật cơ bản trong lập trình mạng</span>
+    </nav>
+
+    <div class="single-post-header">
+        <span class="article-category">Detailed Insights</span>
+        <h1 class="single-post-title">Bảo mật cơ bản trong lập trình mạng</h1>
+        <div class="article-meta">
+            <span>📅 23/12/2025</span>
+            <span>⏱️ 3 phút đọc</span>
+            
+            <span class="meta-divider">|</span>
+            <span>📂
+                
+                <a href="/%20categories/development" class="category-badge">Development</a>
+                
+                <a href="/%20categories/security" class="category-badge">Security</a>
+                
+                <a href="/%20categories/networking" class="category-badge">Networking</a>
+                
+            </span>
+            
+        </div>
+    </div>
+
+    
+    <div class="post-toc">
+        <h4 class="toc-title">Mục lục</h4>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-tổng-quan-về-bảo-mật-trong-lập-trình-mạng">1. Tổng quan về bảo mật trong lập trình mạng</a></li>
+    <li><a href="#2-các-biện-pháp-bảo-mật-cơ-bản">2. Các biện pháp bảo mật cơ bản</a>
+      <ul>
+        <li><a href="#https-và-mã-hóa-dữ-liệu">HTTPS và mã hóa dữ liệu</a></li>
+        <li><a href="#token-based-authentication">Token-Based Authentication</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-ví-dụ-code-bảo-mật">3. Ví dụ code bảo mật</a>
+      <ul>
+        <li><a href="#java-hash-mật-khẩu-với-bcrypt">Java: Hash mật khẩu với BCrypt</a></li>
+        <li><a href="#javascript-ngăn-chặn-xss-từ-dữ-liệu-người-dùng">JavaScript: Ngăn chặn XSS từ dữ liệu người dùng</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-nguyên-tắc-bảo-mật-quan-trọng">4. Nguyên tắc bảo mật quan trọng</a></li>
+    <li><a href="#kết-luận">Kết luận</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+    <div class="post-content-inner">
+        <p>Mạng máy tính là môi trường mở, nơi dữ liệu luôn phải di chuyển qua nhiều thiết bị trung gian. Nếu không được bảo vệ đúng cách, thông tin có thể bị đánh cắp, chỉnh sửa hoặc giả mạo mà người dùng không hề hay biết.</p>
+<h2 id="1-tổng-quan-về-bảo-mật-trong-lập-trình-mạng">1. Tổng quan về bảo mật trong lập trình mạng</h2>
+<p>Bảo mật mạng tập trung vào việc <strong>bảo vệ dữ liệu khi truyền tải</strong> và <strong>ngăn chặn các truy cập trái phép</strong> vào hệ thống.<br>
+Lập trình viên cần hiểu rằng mọi dữ liệu đến từ mạng đều <strong>không đáng tin cậy</strong> cho đến khi được kiểm chứng.</p>
+<p>Một số mối đe dọa phổ biến trong lập trình mạng:</p>
+<ul>
+<li><strong>Man-in-the-Middle (MitM)</strong>: Kẻ tấn công nghe lén hoặc thay đổi dữ liệu trên đường truyền.</li>
+<li><strong>Sniffing</strong>: Bắt gói tin mạng để đọc thông tin nhạy cảm.</li>
+<li><strong>SQL Injection</strong>: Chèn câu lệnh SQL độc hại thông qua input.</li>
+<li><strong>Cross-Site Scripting (XSS)</strong>: Chèn mã độc vào trình duyệt người dùng.</li>
+</ul>
+<h2 id="2-các-biện-pháp-bảo-mật-cơ-bản">2. Các biện pháp bảo mật cơ bản</h2>
+<h3 id="https-và-mã-hóa-dữ-liệu">HTTPS và mã hóa dữ liệu</h3>
+<p>HTTPS sử dụng TLS/SSL để:</p>
+<ul>
+<li>Mã hóa dữ liệu truyền giữa Client và Server.</li>
+<li>Xác thực danh tính Server.</li>
+<li>Đảm bảo dữ liệu không bị thay đổi trong quá trình truyền.</li>
+</ul>
+<p>👉 Mọi ứng dụng web hiện đại <strong>bắt buộc phải sử dụng HTTPS</strong>.</p>
+<h3 id="token-based-authentication">Token-Based Authentication</h3>
+<p>Thay vì lưu session truyền thống, hệ thống hiện đại thường sử dụng:</p>
+<ul>
+<li><strong>JWT (JSON Web Token)</strong></li>
+<li><strong>Access Token / Refresh Token</strong></li>
+</ul>
+<p>Cơ chế này giúp:</p>
+<ul>
+<li>Giảm nguy cơ bị chiếm quyền phiên.</li>
+<li>Dễ mở rộng cho hệ thống phân tán (Microservices).</li>
+</ul>
+<h2 id="3-ví-dụ-code-bảo-mật">3. Ví dụ code bảo mật</h2>
+<h3 id="java-hash-mật-khẩu-với-bcrypt">Java: Hash mật khẩu với BCrypt</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String hashedPassword <span style="color:#f92672">=</span> BCrypt.<span style="color:#a6e22e">hashpw</span>(plainPass, BCrypt.<span style="color:#a6e22e">gensalt</span>());
+</span></span></code></pre></div><p>Việc sử dụng BCrypt giúp:</p>
+<ul>
+<li>Không lưu mật khẩu dạng plaintext.</li>
+<li>Tự động thêm salt.</li>
+<li>Chống lại tấn công brute-force hiệu quả.</li>
+</ul>
+<h3 id="javascript-ngăn-chặn-xss-từ-dữ-liệu-người-dùng">JavaScript: Ngăn chặn XSS từ dữ liệu người dùng</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">safeText</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">userContent</span>
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&lt;/g</span>, <span style="color:#e6db74">&#34;&amp;lt;&#34;</span>)
+</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/&gt;/g</span>, <span style="color:#e6db74">&#34;&amp;gt;&#34;</span>);
+</span></span></code></pre></div><p>Việc escape ký tự nguy hiểm giúp:</p>
+<ul>
+<li>Ngăn script độc hại thực thi trong trình duyệt.</li>
+<li>Bảo vệ người dùng khỏi đánh cắp cookie hoặc token.</li>
+</ul>
+<h2 id="4-nguyên-tắc-bảo-mật-quan-trọng">4. Nguyên tắc bảo mật quan trọng</h2>
+<p>Một số nguyên tắc mà lập trình viên mạng cần ghi nhớ:</p>
+<ul>
+<li>Không bao giờ tin tưởng input từ Client.</li>
+<li>Luôn validate và sanitize dữ liệu.</li>
+<li>Không truyền dữ liệu nhạy cảm qua HTTP thường.</li>
+<li>Áp dụng nguyên tắc Least Privilege (quyền tối thiểu).</li>
+<li>Log và giám sát các hành vi bất thường.</li>
+</ul>
+<p>Bảo mật không phải là một bước trong dự án mà là một quy trình xuyên suốt vòng đời phần mềm.</p>
+<h2 id="kết-luận">Kết luận</h2>
+<p>Bảo mật trong lập trình mạng không phải là lựa chọn, mà là yêu cầu bắt buộc. Việc kết hợp giữa mã hóa, xác thực, và xử lý dữ liệu an toàn giúp hệ thống tránh được phần lớn các cuộc tấn công phổ biến. Một lập trình viên giỏi không chỉ biết viết code chạy được, mà còn phải biết viết code an toàn.</p>
+
+    </div>
+
+    
+    <div class="author-bio-card">
+        <div class="author-bio-info">
+            <h4 class="author-bio-name">Trương Đình Ngân</h4>
+            <p class="author-bio-text">Chuyên gia về Lập trình Mạng và Phát triển Phần mềm. Đam mê chia sẻ kiến thức
+                cộng đồng và xây dựng các giải pháp công nghệ hiện đại. Cùng kết nối và học hỏi tại Blog này nhé!</p>
+            <div class="author-bio-links">
+                <a href="https://facebook.com/truongdinhngan.it" class="author-social-link">Facebook</a>
+                <a href="https://github.com/dinhngan-it" class="author-social-link">GitHub</a>
+                <a href="/contact/" class="author-social-link">Liên hệ</a>
+            </div>
+        </div>
+    </div>
+</article>
+
+            </main>
+            <aside class="sidebar">
+    
+    <div class="sidebar-widget">
+        <h3 class="widget-title">Tìm kiếm</h3>
+        <form action="/search/" method="get">
+            <input type="text" name="q" class="search-box" placeholder="Nhập từ khóa...">
+        </form>
+    </div>
+
+    
+    <div class="sidebar-widget profile-card-modern">
+        <img src="/images/avatar.jpg" alt="Trương Đình Ngân" class="modern-avatar">
+        <h3 class="widget-title" style="border:none; padding:0; margin-bottom: 5px;">About Me</h3>
+        <h4 class="modern-name">Trương Đình Ngân</h4>
+        <p class="modern-bio">
+            Sinh viên năm thứ 4 chuyên ngành Công nghệ thông tin tại Trường Đại học Công nghệ TP.HCM (HUTECH).
+            Mình đam mê tìm hiểu về lập trình mạng, bảo mật và xây dựng các hệ thống phần mềm hiệu quả.
+        </p>
+
+        <div class="modern-meta">
+            <div class="meta-item">
+                <i class="icon">📧</i> ngan77pro@gmail.com
+            </div>
+            <div class="meta-item">
+                <i class="icon">📞</i> 0813439579
+            </div>
+        </div>
+
+        <div class="modern-socials">
+            <a href="https://github.com/username" class="social-icon-sm">git</a>
+            <a href="https://www.tiktok.com/@nganne77?is_from_webapp=1&sender_device=pc"
+                class="social-icon-sm">Tiktok</a>
+            <a href="https://www.facebook.com/share/1W6XR4GnKL/?mibextid=wwXIfr" class="social-icon-sm">fb</a>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h3 class="widget-title">Bài viết mới nhất</h3>
+        <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+            
+            <li style="margin-bottom: 12px;">
+                <a href="/posts/bai-viet-7/"
+                    style="color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px;">Bảo mật cơ bản trong lập trình mạng</a>
+                <span style="font-size: 0.8rem; opacity: 0.6;">📅 23/12/2025</span>
+            </li>
+            
+            <li style="margin-bottom: 12px;">
+                <a href="/posts/bai-viet-9/"
+                    style="color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px;">Định hướng học lập trình mạng với Java &amp; JavaScript</a>
+                <span style="font-size: 0.8rem; opacity: 0.6;">📅 23/12/2025</span>
+            </li>
+            
+            <li style="margin-bottom: 12px;">
+                <a href="/posts/bai-viet-4/"
+                    style="color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px;">Giao thức HTTP và cách JavaScript giao tiếp với Server</a>
+                <span style="font-size: 0.8rem; opacity: 0.6;">📅 23/12/2025</span>
+            </li>
+            
+            <li style="margin-bottom: 12px;">
+                <a href="/posts/bai-viet-3/"
+                    style="color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px;">Lập trình Socket trong Java – Cơ bản</a>
+                <span style="font-size: 0.8rem; opacity: 0.6;">📅 23/12/2025</span>
+            </li>
+            
+            <li style="margin-bottom: 12px;">
+                <a href="/posts/bai-viet-2/"
+                    style="color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px;">Mô hình Client – Server trong lập trình mạng</a>
+                <span style="font-size: 0.8rem; opacity: 0.6;">📅 23/12/2025</span>
+            </li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h3 class="widget-title">Chuyên mục</h3>
+        <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+            
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="/categories/client-server/" style="color: inherit; transition: var(--transition);">Client-Server</a>
+                <span style="opacity: 0.5;">(1)</span>
+            </li>
+            
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="/categories/development/" style="color: inherit; transition: var(--transition);">Development</a>
+                <span style="opacity: 0.5;">(4)</span>
+            </li>
+            
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="/categories/http/" style="color: inherit; transition: var(--transition);">HTTP</a>
+                <span style="opacity: 0.5;">(1)</span>
+            </li>
+            
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="/categories/java/" style="color: inherit; transition: var(--transition);">Java</a>
+                <span style="opacity: 0.5;">(2)</span>
+            </li>
+            
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="/categories/javascript/" style="color: inherit; transition: var(--transition);">JavaScript</a>
+                <span style="opacity: 0.5;">(2)</span>
+            </li>
+            
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="/categories/json/" style="color: inherit; transition: var(--transition);">JSON</a>
+                <span style="opacity: 0.5;">(1)</span>
+            </li>
+            
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="/categories/networking/" style="color: inherit; transition: var(--transition);">Networking</a>
+                <span style="opacity: 0.5;">(7)</span>
+            </li>
+            
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="/categories/realtime/" style="color: inherit; transition: var(--transition);">Realtime</a>
+                <span style="opacity: 0.5;">(1)</span>
+            </li>
+            
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="/categories/rest-api/" style="color: inherit; transition: var(--transition);">REST API</a>
+                <span style="opacity: 0.5;">(1)</span>
+            </li>
+            
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="/categories/security/" style="color: inherit; transition: var(--transition);">Security</a>
+                <span style="opacity: 0.5;">(1)</span>
+            </li>
+            
+            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
+                <a href="/categories/websocket/" style="color: inherit; transition: var(--transition);">WebSocket</a>
+                <span style="opacity: 0.5;">(1)</span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+        </div>
+    </div>
+
+    <div id="scroll-to-top" title="Lên đầu trang">
+        <span style="font-size: 1.5rem;">↑</span>
+    </div>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-widget">
+                <div class="logo-group" style="margin-bottom: 1.5rem;">
+                    <div class="logo-icon">N</div>
+                    <h1 style="font-size: 1.1rem; font-weight: 700; color: var(--accent-cyan); margin: 0;">ĐÌNH NGÂN IT
+                        BLOG</h1>
+                </div>
+                <p style="text-align: left; line-height: 1.7;">Chia sẻ kiến thức chuyên sâu về lập trình mạng, bảo mật
+                    và công nghệ. Nơi hành trình lập trình của bạn bắt đầu với tư duy hệ thống và chuyên nghiệp.</p>
+                <div class="footer-socials">
+                    <a href="https://facebook.com/truongdinhngan.it" class="social-icon-sm">FB</a>
+                    <a href="https://github.com/dinhngan-it" class="social-icon-sm">GH</a>
+                    <a href="https://tiktok.com/@dinhngan.it" class="social-icon-sm">TT</a>
+                </div>
+            </div>
+
+            <div class="footer-widget">
+                <h4 style="color: var(--text-primary); margin-bottom: 1.5rem; font-weight: 700;">Khám phá</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li><a href="/about/">Giới thiệu bản thân</a></li>
+                    <li><a href="/contact/">Liên hệ với mình</a></li>
+                    <li><a href="/categories/">Chuyên mục bài viết</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-widget">
+                <h4 style="color: var(--text-primary); margin-bottom: 1.5rem; font-weight: 700;">Newsletter</h4>
+                <p style="text-align: left; margin-bottom: 1.5rem;">Nhận thông báo mới nhất về các bài viết lập trình
+                    mạng và bảo mật.</p>
+                <form style="display: flex; gap: 8px;">
+                    <input type="email" class="search-box" placeholder="Email của bạn..."
+                        style="margin: 0; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); padding: 12px;">
+                    <button class="btn-cert" style="padding: 0 20px; font-size: 0.8rem; height: 42px;">Gửi</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom"
+            style="border-top: 1px solid var(--border-color); padding: 2rem 0; margin-top: 4rem; opacity: 0.6; font-size: 0.85rem;">
+            <div class="container">
+                <p>&copy; 2025 ĐÌNH NGÂN BLOG - All Rights Reserved. Crafted with Passion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        window.onscroll = function () {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        };
+
+        scrollToTopBtn.onclick = function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+</body>
+
+</html>

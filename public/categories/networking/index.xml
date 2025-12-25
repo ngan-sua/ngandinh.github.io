@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on ĐÌNH NGÂN BLOG</title>
+    <link>/categories/networking/</link>
+    <description>Recent content in Networking on ĐÌNH NGÂN BLOG</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/categories/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bảo mật cơ bản trong lập trình mạng</title>
+      <link>/posts/bai-viet-7/</link>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/bai-viet-7/</guid>
+      <description>&lt;p&gt;Mạng máy tính là môi trường mở, nơi dữ liệu luôn phải di chuyển qua nhiều thiết bị trung gian. Nếu không được bảo vệ đúng cách, thông tin có thể bị đánh cắp, chỉnh sửa hoặc giả mạo mà người dùng không hề hay biết.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tổng-quan-về-bảo-mật-trong-lập-trình-mạng&#34;&gt;1. Tổng quan về bảo mật trong lập trình mạng&lt;/h2&gt;&#xA;&lt;p&gt;Bảo mật mạng tập trung vào việc &lt;strong&gt;bảo vệ dữ liệu khi truyền tải&lt;/strong&gt; và &lt;strong&gt;ngăn chặn các truy cập trái phép&lt;/strong&gt; vào hệ thống.&lt;br&gt;&#xA;Lập trình viên cần hiểu rằng mọi dữ liệu đến từ mạng đều &lt;strong&gt;không đáng tin cậy&lt;/strong&gt; cho đến khi được kiểm chứng.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Định hướng học lập trình mạng với Java &amp; JavaScript</title>
+      <link>/posts/bai-viet-9/</link>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/bai-viet-9/</guid>
+      <description>&lt;p&gt;Lập trình mạng không phải là một chủ đề có thể học trong ngày một ngày hai. Đây là một hành trình đòi hỏi sự kiên trì, tư duy hệ thống và khả năng kết nối nhiều kiến thức khác nhau từ phần cứng, hệ điều hành cho đến lập trình ứng dụng.&lt;/p&gt;&#xA;&lt;p&gt;Bài viết này chia sẻ &lt;strong&gt;định hướng học lập trình mạng&lt;/strong&gt; dành cho sinh viên và người mới bắt đầu, tập trung vào hai ngôn ngữ phổ biến là &lt;strong&gt;Java&lt;/strong&gt; và &lt;strong&gt;JavaScript&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Giao thức HTTP và cách JavaScript giao tiếp với Server</title>
+      <link>/posts/bai-viet-4/</link>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/bai-viet-4/</guid>
+      <description>&lt;p&gt;HTTP (HyperText Transfer Protocol) là giao thức nền tảng của World Wide Web, cho phép các ứng dụng và trình duyệt giao tiếp với Server thông qua mạng Internet. Hầu hết các website và Web API hiện nay đều sử dụng HTTP làm phương thức trao đổi dữ liệu chính.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tổng-quan-về-giao-thức-http&#34;&gt;1. Tổng quan về giao thức HTTP&lt;/h2&gt;&#xA;&lt;p&gt;HTTP là giao thức &lt;strong&gt;không trạng thái (stateless)&lt;/strong&gt;, nghĩa là mỗi request từ Client đến Server đều độc lập và không ghi nhớ trạng thái của các request trước đó.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lập trình Socket trong Java – Cơ bản</title>
+      <link>/posts/bai-viet-3/</link>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/bai-viet-3/</guid>
+      <description>&lt;p&gt;Socket là một trong những khái niệm nền tảng của lập trình mạng, cho phép hai chương trình đang chạy trên các máy tính khác nhau giao tiếp với nhau thông qua mạng TCP/IP. Trong Java, lập trình Socket được sử dụng rộng rãi để xây dựng các ứng dụng client – server ở mức thấp, giúp lập trình viên hiểu rõ cơ chế truyền dữ liệu qua mạng.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-khái-niệm-socket-trong-java&#34;&gt;1. Khái niệm Socket trong Java&lt;/h2&gt;&#xA;&lt;p&gt;Socket có thể được hiểu là &lt;strong&gt;điểm cuối của một kênh giao tiếp&lt;/strong&gt; giữa hai tiến trình trên mạng. Java cung cấp các lớp hỗ trợ Socket trong gói &lt;code&gt;java.net&lt;/code&gt;, cho phép lập trình viên dễ dàng triển khai mô hình Client – Server.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mô hình Client – Server trong lập trình mạng</title>
+      <link>/posts/bai-viet-2/</link>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/bai-viet-2/</guid>
+      <description>&lt;p&gt;Mô hình &lt;strong&gt;Client – Server&lt;/strong&gt; là nền tảng của hầu hết các hệ thống mạng và ứng dụng web hiện nay. Hầu như mọi thao tác trên Internet như truy cập website, đăng nhập hệ thống hay gọi API đều tuân theo kiến trúc này. Việc hiểu rõ mô hình Client – Server giúp lập trình viên nắm vững cách các ứng dụng giao tiếp và trao đổi dữ liệu qua mạng.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>So sánh Java và JavaScript trong lập trình mạng</title>
+      <link>/posts/bai-viet-8/</link>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/bai-viet-8/</guid>
+      <description>&lt;p&gt;Java và JavaScript đều đóng vai trò quan trọng trong lập trình mạng hiện đại, nhưng mỗi ngôn ngữ lại theo đuổi một triết lý thiết kế hoàn toàn khác nhau. Việc hiểu rõ sự khác biệt này giúp lập trình viên lựa chọn công cụ phù hợp cho từng bài toán cụ thể.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tổng-quan-về-triết-lý-thiết-kế&#34;&gt;1. Tổng quan về triết lý thiết kế&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Java&lt;/strong&gt; được xây dựng với mục tiêu ổn định, an toàn và khả năng mở rộng lâu dài. Nó phù hợp cho các hệ thống lớn, yêu cầu kiểm soát tài nguyên chặt chẽ.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;JavaScript (Node.js)&lt;/strong&gt; tập trung vào xử lý I/O bất đồng bộ, tối ưu cho các ứng dụng mạng cần phản hồi nhanh và xử lý nhiều kết nối đồng thời.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Hai hướng tiếp cận khác nhau này tạo nên sự khác biệt rõ rệt trong lập trình mạng.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tổng quan lập trình mạng và vai trò của Java &amp; JavaScript</title>
+      <link>/posts/bai-viet-1/</link>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/bai-viet-1/</guid>
+      <description>&lt;p&gt;Lập trình mạng là nền tảng cốt lõi của Internet hiện đại, cho phép các thiết bị và ứng dụng giao tiếp, trao đổi dữ liệu với nhau thông qua mạng máy tính. Từ website, ứng dụng di động cho đến các hệ thống phân tán quy mô lớn, tất cả đều dựa trên lập trình mạng. Trong bài viết này, mình sẽ trình bày tổng quan về lập trình mạng và phân tích vai trò của &lt;strong&gt;Java&lt;/strong&gt; và &lt;strong&gt;JavaScript&lt;/strong&gt; trong lĩnh vực này.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
