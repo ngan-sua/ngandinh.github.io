@@ -2,8 +2,8 @@ baseURL = "https://ngan-sua.github.io/ngandinh.github.io/"
 languageCode = "vi"
 title = "ĐÌNH NGÂN BLOG"
 # theme = "minimal"
-canonifyURLs = true
-relativeURLs = true
+canonifyURLs = false
+relativeURLs = false
 [outputs]
   home = ["html", "json"]
 
