@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on ĐÌNH NGÂN BLOG</title>
-    <link>http://localhost:1313/categories/development/</link>
+    <link>http://localhost:1313/ngandinh.github.io/categories/development/</link>
     <description>Recent content in Development on ĐÌNH NGÂN BLOG</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/ngandinh.github.io/categories/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bảo mật cơ bản trong lập trình mạng</title>
-      <link>http://localhost:1313/posts/bai-viet-7/</link>
+      <link>http://localhost:1313/ngandinh.github.io/posts/bai-viet-7/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bai-viet-7/</guid>
+      <guid>http://localhost:1313/ngandinh.github.io/posts/bai-viet-7/</guid>
       <description>&lt;p&gt;Mạng máy tính là môi trường mở, nơi dữ liệu luôn phải di chuyển qua nhiều thiết bị trung gian. Nếu không được bảo vệ đúng cách, thông tin có thể bị đánh cắp, chỉnh sửa hoặc giả mạo mà người dùng không hề hay biết.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tổng-quan-về-bảo-mật-trong-lập-trình-mạng&#34;&gt;1. Tổng quan về bảo mật trong lập trình mạng&lt;/h2&gt;&#xA;&lt;p&gt;Bảo mật mạng tập trung vào việc &lt;strong&gt;bảo vệ dữ liệu khi truyền tải&lt;/strong&gt; và &lt;strong&gt;ngăn chặn các truy cập trái phép&lt;/strong&gt; vào hệ thống.&lt;br&gt;&#xA;Lập trình viên cần hiểu rằng mọi dữ liệu đến từ mạng đều &lt;strong&gt;không đáng tin cậy&lt;/strong&gt; cho đến khi được kiểm chứng.&lt;/p&gt;</description>
     </item>
     <item>
       <title>REST API và JSON trong Java &amp; JavaScript</title>
-      <link>http://localhost:1313/posts/bai-viet-5/</link>
+      <link>http://localhost:1313/ngandinh.github.io/posts/bai-viet-5/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bai-viet-5/</guid>
+      <guid>http://localhost:1313/ngandinh.github.io/posts/bai-viet-5/</guid>
       <description>&lt;p&gt;REST API và JSON là hai thành phần không thể thiếu trong các hệ thống web và ứng dụng hiện đại. Chúng đóng vai trò trung tâm trong việc giúp các ứng dụng khác nhau có thể giao tiếp, trao đổi dữ liệu một cách hiệu quả và linh hoạt. Trong bài viết này, mình sẽ trình bày tổng quan về REST API, JSON và cách Java cùng JavaScript sử dụng chúng trong thực tế.&lt;/p&gt;</description>
     </item>
     <item>
       <title>So sánh Java và JavaScript trong lập trình mạng</title>
-      <link>http://localhost:1313/posts/bai-viet-8/</link>
+      <link>http://localhost:1313/ngandinh.github.io/posts/bai-viet-8/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bai-viet-8/</guid>
+      <guid>http://localhost:1313/ngandinh.github.io/posts/bai-viet-8/</guid>
       <description>&lt;p&gt;Java và JavaScript đều đóng vai trò quan trọng trong lập trình mạng hiện đại, nhưng mỗi ngôn ngữ lại theo đuổi một triết lý thiết kế hoàn toàn khác nhau. Việc hiểu rõ sự khác biệt này giúp lập trình viên lựa chọn công cụ phù hợp cho từng bài toán cụ thể.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tổng-quan-về-triết-lý-thiết-kế&#34;&gt;1. Tổng quan về triết lý thiết kế&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Java&lt;/strong&gt; được xây dựng với mục tiêu ổn định, an toàn và khả năng mở rộng lâu dài. Nó phù hợp cho các hệ thống lớn, yêu cầu kiểm soát tài nguyên chặt chẽ.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;JavaScript (Node.js)&lt;/strong&gt; tập trung vào xử lý I/O bất đồng bộ, tối ưu cho các ứng dụng mạng cần phản hồi nhanh và xử lý nhiều kết nối đồng thời.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Hai hướng tiếp cận khác nhau này tạo nên sự khác biệt rõ rệt trong lập trình mạng.&lt;/p&gt;</description>
     </item>
     <item>
       <title>WebSocket – Giao tiếp realtime trong Java &amp; JavaScript</title>
-      <link>http://localhost:1313/posts/bai-viet-6/</link>
+      <link>http://localhost:1313/ngandinh.github.io/posts/bai-viet-6/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bai-viet-6/</guid>
+      <guid>http://localhost:1313/ngandinh.github.io/posts/bai-viet-6/</guid>
       <description>&lt;p&gt;Nếu HTTP giống như một cuộc gọi điện thoại (kết nối xong rồi ngắt), thì WebSocket giống như bộ đàm – kết nối được duy trì liên tục và cho phép hai bên trao đổi dữ liệu theo thời gian thực.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tổng-quan-về-websocket&#34;&gt;1. Tổng quan về WebSocket&lt;/h2&gt;&#xA;&lt;p&gt;WebSocket là một giao thức cho phép &lt;strong&gt;giao tiếp song công toàn phần (full-duplex)&lt;/strong&gt; giữa Client và Server thông qua &lt;strong&gt;một kết nối TCP duy nhất&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Client-Server on ĐÌNH NGÂN BLOG</title>
-    <link>http://localhost:1313/categories/client-server/</link>
+    <link>http://localhost:1313/ngandinh.github.io/categories/client-server/</link>
     <description>Recent content in Client-Server on ĐÌNH NGÂN BLOG</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/client-server/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/ngandinh.github.io/categories/client-server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mô hình Client – Server trong lập trình mạng</title>
-      <link>http://localhost:1313/posts/bai-viet-2/</link>
+      <link>http://localhost:1313/ngandinh.github.io/posts/bai-viet-2/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bai-viet-2/</guid>
+      <guid>http://localhost:1313/ngandinh.github.io/posts/bai-viet-2/</guid>
       <description>&lt;p&gt;Mô hình &lt;strong&gt;Client – Server&lt;/strong&gt; là nền tảng của hầu hết các hệ thống mạng và ứng dụng web hiện nay. Hầu như mọi thao tác trên Internet như truy cập website, đăng nhập hệ thống hay gọi API đều tuân theo kiến trúc này. Việc hiểu rõ mô hình Client – Server giúp lập trình viên nắm vững cách các ứng dụng giao tiếp và trao đổi dữ liệu qua mạng.&lt;/p&gt;</description>
     </item>
   </channel>

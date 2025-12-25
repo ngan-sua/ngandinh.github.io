@@ -6,7 +6,7 @@
             {{ $img := "/images/networking_thumb.png" }}
             {{ if eq (mod $index 3) 1 }}{{ $img = "/images/coding_thumb.png" }}{{ end }}
             {{ if eq (mod $index 3) 2 }}{{ $img = "/images/security_thumb.png" }}{{ end }}
-            <img src="{{ $img }}" alt="{{ .Title }}">
+            <img src="{{ $img | relURL }}" alt="{{ .Title }}">
         </div>
         <div class="article-content">
             <span class="article-category">Technology & Development</span>

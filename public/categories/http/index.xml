@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HTTP on ĐÌNH NGÂN BLOG</title>
-    <link>http://localhost:1313/categories/http/</link>
+    <link>http://localhost:1313/ngandinh.github.io/categories/http/</link>
     <description>Recent content in HTTP on ĐÌNH NGÂN BLOG</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/http/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/ngandinh.github.io/categories/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Giao thức HTTP và cách JavaScript giao tiếp với Server</title>
-      <link>http://localhost:1313/posts/bai-viet-4/</link>
+      <link>http://localhost:1313/ngandinh.github.io/posts/bai-viet-4/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/bai-viet-4/</guid>
+      <guid>http://localhost:1313/ngandinh.github.io/posts/bai-viet-4/</guid>
       <description>&lt;p&gt;HTTP (HyperText Transfer Protocol) là giao thức nền tảng của World Wide Web, cho phép các ứng dụng và trình duyệt giao tiếp với Server thông qua mạng Internet. Hầu hết các website và Web API hiện nay đều sử dụng HTTP làm phương thức trao đổi dữ liệu chính.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tổng-quan-về-giao-thức-http&#34;&gt;1. Tổng quan về giao thức HTTP&lt;/h2&gt;&#xA;&lt;p&gt;HTTP là giao thức &lt;strong&gt;không trạng thái (stateless)&lt;/strong&gt;, nghĩa là mỗi request từ Client đến Server đều độc lập và không ghi nhớ trạng thái của các request trước đó.&lt;/p&gt;</description>
     </item>
   </channel>
