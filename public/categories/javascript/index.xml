@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on ĐÌNH NGÂN BLOG</title>
-    <link>/categories/javascript/</link>
+    <link>http://localhost:1313/categories/javascript/</link>
     <description>Recent content in JavaScript on ĐÌNH NGÂN BLOG</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Giao thức HTTP và cách JavaScript giao tiếp với Server</title>
-      <link>/posts/bai-viet-4/</link>
+      <link>http://localhost:1313/posts/bai-viet-4/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/bai-viet-4/</guid>
+      <guid>http://localhost:1313/posts/bai-viet-4/</guid>
       <description>&lt;p&gt;HTTP (HyperText Transfer Protocol) là giao thức nền tảng của World Wide Web, cho phép các ứng dụng và trình duyệt giao tiếp với Server thông qua mạng Internet. Hầu hết các website và Web API hiện nay đều sử dụng HTTP làm phương thức trao đổi dữ liệu chính.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tổng-quan-về-giao-thức-http&#34;&gt;1. Tổng quan về giao thức HTTP&lt;/h2&gt;&#xA;&lt;p&gt;HTTP là giao thức &lt;strong&gt;không trạng thái (stateless)&lt;/strong&gt;, nghĩa là mỗi request từ Client đến Server đều độc lập và không ghi nhớ trạng thái của các request trước đó.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tổng quan lập trình mạng và vai trò của Java &amp; JavaScript</title>
-      <link>/posts/bai-viet-1/</link>
+      <link>http://localhost:1313/posts/bai-viet-1/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/bai-viet-1/</guid>
+      <guid>http://localhost:1313/posts/bai-viet-1/</guid>
       <description>&lt;p&gt;Lập trình mạng là nền tảng cốt lõi của Internet hiện đại, cho phép các thiết bị và ứng dụng giao tiếp, trao đổi dữ liệu với nhau thông qua mạng máy tính. Từ website, ứng dụng di động cho đến các hệ thống phân tán quy mô lớn, tất cả đều dựa trên lập trình mạng. Trong bài viết này, mình sẽ trình bày tổng quan về lập trình mạng và phân tích vai trò của &lt;strong&gt;Java&lt;/strong&gt; và &lt;strong&gt;JavaScript&lt;/strong&gt; trong lĩnh vực này.&lt;/p&gt;</description>
     </item>
   </channel>

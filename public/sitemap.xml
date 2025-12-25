@@ -2,83 +2,83 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/bai-viet-7/</loc>
+    <loc>http://localhost:1313/posts/bai-viet-7/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/client-server/</loc>
+    <loc>http://localhost:1313/categories/client-server/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/development/</loc>
+    <loc>http://localhost:1313/categories/development/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/bai-viet-9/</loc>
+    <loc>http://localhost:1313/posts/bai-viet-9/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/bai-viet-4/</loc>
+    <loc>http://localhost:1313/posts/bai-viet-4/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/http/</loc>
+    <loc>http://localhost:1313/categories/http/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/java/</loc>
+    <loc>http://localhost:1313/categories/java/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/javascript/</loc>
+    <loc>http://localhost:1313/categories/javascript/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/json/</loc>
+    <loc>http://localhost:1313/categories/json/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/bai-viet-3/</loc>
+    <loc>http://localhost:1313/posts/bai-viet-3/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/bai-viet-2/</loc>
+    <loc>http://localhost:1313/posts/bai-viet-2/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/networking/</loc>
+    <loc>http://localhost:1313/categories/networking/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/realtime/</loc>
+    <loc>http://localhost:1313/categories/realtime/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/rest-api/</loc>
+    <loc>http://localhost:1313/categories/rest-api/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/bai-viet-5/</loc>
+    <loc>http://localhost:1313/posts/bai-viet-5/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/security/</loc>
+    <loc>http://localhost:1313/categories/security/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/bai-viet-8/</loc>
+    <loc>http://localhost:1313/posts/bai-viet-8/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/bai-viet-1/</loc>
+    <loc>http://localhost:1313/posts/bai-viet-1/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/websocket/</loc>
+    <loc>http://localhost:1313/categories/websocket/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/bai-viet-6/</loc>
+    <loc>http://localhost:1313/posts/bai-viet-6/</loc>
     <lastmod>2025-12-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
   </url><url>
-    <loc>/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
   </url>
 </urlset>

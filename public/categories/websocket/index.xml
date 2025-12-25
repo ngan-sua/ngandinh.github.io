@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WebSocket on ĐÌNH NGÂN BLOG</title>
-    <link>/categories/websocket/</link>
+    <link>http://localhost:1313/categories/websocket/</link>
     <description>Recent content in WebSocket on ĐÌNH NGÂN BLOG</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/websocket/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/websocket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WebSocket – Giao tiếp realtime trong Java &amp; JavaScript</title>
-      <link>/posts/bai-viet-6/</link>
+      <link>http://localhost:1313/posts/bai-viet-6/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/bai-viet-6/</guid>
+      <guid>http://localhost:1313/posts/bai-viet-6/</guid>
       <description>&lt;p&gt;Nếu HTTP giống như một cuộc gọi điện thoại (kết nối xong rồi ngắt), thì WebSocket giống như bộ đàm – kết nối được duy trì liên tục và cho phép hai bên trao đổi dữ liệu theo thời gian thực.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tổng-quan-về-websocket&#34;&gt;1. Tổng quan về WebSocket&lt;/h2&gt;&#xA;&lt;p&gt;WebSocket là một giao thức cho phép &lt;strong&gt;giao tiếp song công toàn phần (full-duplex)&lt;/strong&gt; giữa Client và Server thông qua &lt;strong&gt;một kết nối TCP duy nhất&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ĐÌNH NGÂN BLOG</title>
-    <link>/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on ĐÌNH NGÂN BLOG</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Client-Server</title>
-      <link>/categories/client-server/</link>
+      <link>http://localhost:1313/categories/client-server/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/client-server/</guid>
+      <guid>http://localhost:1313/categories/client-server/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
-      <link>/categories/development/</link>
+      <link>http://localhost:1313/categories/development/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/development/</guid>
+      <guid>http://localhost:1313/categories/development/</guid>
       <description></description>
     </item>
     <item>
       <title>HTTP</title>
-      <link>/categories/http/</link>
+      <link>http://localhost:1313/categories/http/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/http/</guid>
+      <guid>http://localhost:1313/categories/http/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>/categories/java/</link>
+      <link>http://localhost:1313/categories/java/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/java/</guid>
+      <guid>http://localhost:1313/categories/java/</guid>
       <description></description>
     </item>
     <item>
       <title>JavaScript</title>
-      <link>/categories/javascript/</link>
+      <link>http://localhost:1313/categories/javascript/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/javascript/</guid>
+      <guid>http://localhost:1313/categories/javascript/</guid>
       <description></description>
     </item>
     <item>
       <title>JSON</title>
-      <link>/categories/json/</link>
+      <link>http://localhost:1313/categories/json/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/json/</guid>
+      <guid>http://localhost:1313/categories/json/</guid>
       <description></description>
     </item>
     <item>
       <title>Networking</title>
-      <link>/categories/networking/</link>
+      <link>http://localhost:1313/categories/networking/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/networking/</guid>
+      <guid>http://localhost:1313/categories/networking/</guid>
       <description></description>
     </item>
     <item>
       <title>Realtime</title>
-      <link>/categories/realtime/</link>
+      <link>http://localhost:1313/categories/realtime/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/realtime/</guid>
+      <guid>http://localhost:1313/categories/realtime/</guid>
       <description></description>
     </item>
     <item>
       <title>REST API</title>
-      <link>/categories/rest-api/</link>
+      <link>http://localhost:1313/categories/rest-api/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/rest-api/</guid>
+      <guid>http://localhost:1313/categories/rest-api/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>/categories/security/</link>
+      <link>http://localhost:1313/categories/security/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/security/</guid>
+      <guid>http://localhost:1313/categories/security/</guid>
       <description></description>
     </item>
     <item>
       <title>WebSocket</title>
-      <link>/categories/websocket/</link>
+      <link>http://localhost:1313/categories/websocket/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>/categories/websocket/</guid>
+      <guid>http://localhost:1313/categories/websocket/</guid>
       <description></description>
     </item>
   </channel>
