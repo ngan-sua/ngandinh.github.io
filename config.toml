@@ -1,9 +1,9 @@
-baseURL = "https://ngan-sua.github.io/ngandinh.github.io/"
+baseURL = "/"
 languageCode = "vi"
 title = "ĐÌNH NGÂN BLOG"
 # theme = "minimal"
 canonifyURLs = false
-relativeURLs = false
+relativeURLs = true
 [outputs]
   home = ["html", "json"]
 
@@ -13,7 +13,7 @@ relativeURLs = false
   social_fb = "https://facebook.com/truongdinhngan.it"
   social_gh = "https://github.com/ngan-sua/ngandinh.github.io.git"
   social_tt = "https://tiktok.com/@dinhngan.it"
-  email = "contact@dinhngan.it"
+  email = "ngandinhngan.it"
   location = "Hà Nội, Việt Nam"
 
 [menu]
