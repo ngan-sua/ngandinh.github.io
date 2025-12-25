@@ -1,7 +1,7 @@
 baseURL = "https://ngandinh.github.io/"
 languageCode = "vi"
 title = "ĐÌNH NGÂN BLOG"
-theme = "minimal"
+# theme = "minimal"
 [outputs]
   home = ["html", "json"]
 
