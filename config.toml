@@ -1,4 +1,4 @@
-baseURL = "https://ngan-sua.github.io/ngandinh.github.io/"
+baseURL = "/"
 languageCode = "vi"
 title = "ĐÌNH NGÂN BLOG"
 # theme = "minimal"
