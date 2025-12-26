@@ -118,7 +118,7 @@
 
         // Fetch index
         try {
-            const response = await fetch('/index.json');
+            const response = await fetch('{{ "index.json" | relURL }}');
             searchIndex = await response.json();
             status.textContent = `${searchIndex.length} bài viết đã sẵn sàng tìm kiếm.`;
 

@@ -12,7 +12,7 @@ Mình là **Trương Đình Ngân**, hiện là **sinh viên năm cuối** chuy�
 <div class="about-image-container" data-aos="fade-up">
 <div class="image-frame">
 
-![Trương Đình Ngân - Tết 2026](/images/tet2026.jpg)
+![Trương Đình Ngân - Tết 2026](../images/tet2026.jpg)
 
 </div>
 </div>
@@ -44,7 +44,7 @@ Bên cạnh chương trình học chính khóa, mình cũng tích cực tham gia
 <div class="about-image-container" data-aos="zoom-in">
 <div class="image-frame">
 
-![Tham gia Cuộc thi PROCON HUTECH 2025](/images/procon.jpg)
+![Tham gia Cuộc thi PROCON HUTECH 2025](../images/procon.jpg)
 
 </div>
 </div>
@@ -57,7 +57,7 @@ Bên cạnh chương trình học chính khóa, mình cũng tích cực tham gia
 <div class="about-image-container" data-aos="flip-left">
 <div class="image-frame">
 
-![Chinh phục thử thách tại CTF 2025](/images/CTF.jpg)
+![Chinh phục thử thách tại CTF 2025](../images/CTF.jpg)
 
 </div>
 </div>

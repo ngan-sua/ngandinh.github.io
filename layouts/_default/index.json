@@ -1,0 +1,20 @@
+{
+    {- $.Scratch.Add "index" slice -
+    }
+}
+{
+    {- range .Site.RegularPages -
+    }
+}
+    {
+    {- $.Scratch.Add "index" (dict "title" .Title "date" (.Date.Format "02/01/2006") "categories" .Params.categories "summary" .Summary "content" .Plain "url" .RelPermalink) -
+    }
+}
+{
+    {- end -
+    }
+}
+{
+    {- $.Scratch.Get "index" | jsonify -
+    }
+}

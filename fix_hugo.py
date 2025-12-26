@@ -1,7 +1,7 @@
 import re
 import os
 
-files = [r'layouts\baseof.html', r'layouts\partials\sidebar.html']
+files = [r'layouts\baseof.html', r'layouts\partials\sidebar.html', r'layouts\index.html']
 
 for fpath in files:
     if not os.path.exists(fpath):
@@ -31,7 +31,7 @@ for fpath in files:
     # \s*\|\s*relURL match | relURL
     # \s*\}\}     match }}
     
-    pattern = r'\{\{\s*"([^"]+)"\s*\|\s*relURL\s*\}\}'
+    pattern = r'\{\{\s*"([^"]+)"\s*\|\s*rel(Lang)?URL\s*\}\}'
     
     new_content = re.sub(pattern, replacer, content)
     
