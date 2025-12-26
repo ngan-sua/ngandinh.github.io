@@ -8,7 +8,7 @@
         content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
     <meta name="author" content="{{ .Site.Params.author }}">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ " css/style.css" | relURL }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 
@@ -27,10 +27,10 @@
                     {{ range .Site.Menus.main }}
                     <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
                     {{ end }}
-                    <li><a href="/categories/">Categories</a></li>
+                    <li><a href="{{ " categories/" | relURL }}">Categories</a></li>
                     <li class="nav-search-item">
                         <div class="nav-search-wrapper">
-                            <form action="/search/" method="get">
+                            <form action="{{ " search/" | relURL }}" method="get">
                                 <input type="text" name="q" class="nav-search-input" placeholder="Tìm kiếm...">
                             </form>
                             <span class="search-icon">🔍</span>
@@ -71,10 +71,10 @@
                 <div class="footer-widget footer-links">
                     <h3>Khám phá</h3>
                     <ul>
-                        <li><a href="/">➤ Trang chủ</a></li>
-                        <li><a href="/about/">➤ Về tác giả</a></li>
-                        <li><a href="/categories/">➤ Chuyên mục</a></li>
-                        <li><a href="/contact/">➤ Liên hệ</a></li>
+                        <li><a href="{{ " /" | relURL }}">➤ Trang chủ</a></li>
+                        <li><a href="{{ " about/" | relURL }}">➤ Về tác giả</a></li>
+                        <li><a href="{{ " categories/" | relURL }}">➤ Chuyên mục</a></li>
+                        <li><a href="{{ " contact/" | relURL }}">➤ Liên hệ</a></li>
                     </ul>
                 </div>
 
@@ -96,7 +96,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="{{ " js/script.js" | relURL }}"></script>
     <script>
         AOS.init({
             duration: 800,
