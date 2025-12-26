@@ -1,64 +1,76 @@
 {{ define "main" }}
-<div class="contact-page-wrapper" data-aos="fade-up">
-    <!-- Header Section -->
-    <div class="contact-hero">
-        <h1 class="contact-title-main">CONTACT</h1>
-        <p class="contact-subtitle">Liên hệ & Góp ý</p>
-        <p class="contact-intro">
-            Chào mừng bạn đến với mục góp ý! Nếu bạn có bất kỳ thắc mắc hoặc phản hồi nào về nội dung trên blog, vui
-            lòng để lại lời nhắn bên dưới cho mình nhé.
-        </p>
+<div class="contact-page-wrapper">
+    <div class="contact-hero mb-5 text-center" data-aos="fade-down">
+        <h1 class="display-4 font-weight-bold gradient-text">Liên hệ với tôi</h1>
+        <p class="lead text-muted mt-3">Hãy để lại tin nhắn, tôi sẽ phản hồi sớm nhất có thể!</p>
     </div>
 
-    <!-- Simplified Form Section -->
-    <div class="contact-form-container">
-        <div id="success-message">
-            <div class="success-icon">✓</div>
-            <h2 class="success-title">Cảm ơn bạn!</h2>
-            <p class="success-text">Phản hồi của bạn đã được gửi thành công. Mình sẽ phản hồi sớm nhất có thể.</p>
-        </div>
+    <div class="container">
+        <div class="row items-center justify-content-center"> <!-- Center alignment -->
+            <!-- Contact Form Section -->
+            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100"> <!-- Wider form -->
+                <div class="contact-form-container">
+                    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="name">Họ và tên</label>
+                                <input type="text" id="name" name="name" class="form-input-refined" required
+                                    placeholder="Nhập tên của bạn">
+                            </div>
+                            <div class="form-field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-input-refined" required
+                                    placeholder="name@example.com">
+                            </div>
+                            <div class="form-field full">
+                                <label for="subject">Chủ đề</label>
+                                <input type="text" id="subject" name="subject" class="form-input-refined" required
+                                    placeholder="Bạn muốn thảo luận về vấn đề gì?">
+                            </div>
+                            <div class="form-field full">
+                                <label for="message">Nội dung tin nhắn</label>
+                                <textarea id="message" name="message" rows="6" class="form-input-refined" required
+                                    placeholder="Chi tiết tin nhắn..."></textarea>
+                            </div>
+                        </div>
 
-        <form id="contact-form" action="#" method="POST">
-            <h3 class="widget-title" style="border:none; padding:0; margin-bottom: 2rem; font-size: 1.5rem;">Gửi phản
-                hồi
-                của bạn</h3>
-            <div class="form-grid">
-                <div class="form-field">
-                    <label>Tên</label>
-                    <input type="text" id="name" class="form-input-refined" placeholder="Nhập tên của bạn" required>
-                </div>
-                <div class="form-field">
-                    <label>Gmail</label>
-                    <input type="email" id="email" class="form-input-refined" placeholder="Nhập địa chỉ Gmail" required>
-                </div>
-                <div class="form-field full">
-                    <label>Nội dung</label>
-                    <textarea id="message" class="form-input-refined" rows="8" placeholder="Nội dung bạn muốn góp ý..."
-                        required></textarea>
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn-submit-modern">
+                                <span>Gửi tin nhắn</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="success-message">
+                        <div class="success-icon">✓</div>
+                        <h3 class="success-title">Đã gửi thành công!</h3>
+                        <p class="success-text">Cảm ơn bạn đã liên hệ. Tôi sẽ phản hồi sớm nhất có thể.</p>
+                    </div>
                 </div>
             </div>
-            <button type="submit" class="btn-submit-modern">Gửi phản hồi</button>
-        </form>
+        </div>
+
+        <!-- Additional Contact Info (Optional footer-like section if needed, but we have a footer now) -->
     </div>
 </div>
 
 <script>
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
-
-        const btn = this.querySelector('.btn-submit-modern');
-        if (btn.disabled) return;
-
-        // Simulate sending
-        btn.innerText = 'Đang gửi...';
-        btn.disabled = true;
-        btn.style.opacity = '0.7';
-
+        // Simulate form submission
         setTimeout(() => {
-            // Hide form and show success message
-            document.getElementById('contact-form').style.display = 'none';
-            document.getElementById('success-message').style.display = 'block';
-        }, 1500);
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+        }, 1000);
     });
 </script>
 {{ end }}

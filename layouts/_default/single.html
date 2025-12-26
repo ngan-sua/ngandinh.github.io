@@ -3,7 +3,7 @@
     style="background: var(--bg-card); padding: 3rem; border-radius: 20px; border: 1px solid var(--border-color);">
     <nav class="breadcrumb">
         <a href="/">Trang chủ</a> &raquo;
-        <a href="/posts/">Bài viết</a> &raquo;
+        {{ if eq .Section "posts" }}<a href="/posts/">Bài viết</a> &raquo;{{ end }}
         <span>{{ .Title }}</span>
     </nav>
 
