@@ -9,7 +9,13 @@ draft: false
 Xin chào!  
 Mình là **Trương Đình Ngân**, hiện là **sinh viên năm cuối** chuyên ngành **Công nghệ Thông tin** tại **Trường Đại học Công Nghệ TP.HCM (HUTECH)**.
 
+<div class="about-image-container" data-aos="fade-up">
+<div class="image-frame">
+
 ![Trương Đình Ngân - Tết 2026](/images/tet2026.jpg)
+
+</div>
+</div>
 *Kỷ niệm Tết Ất Tỵ 2026*
 
 Mình có định hướng học tập và nghiên cứu trong lĩnh vực **lập trình mạng** và **phát triển ứng dụng web**, đặc biệt quan tâm đến các công nghệ xoay quanh **Java** và **JavaScript**.  
@@ -30,22 +36,34 @@ Thông qua các học phần này, mình nắm vững mô hình **Client  Server
 
 Bên cạnh chương trình học chính khóa, mình cũng tích cực tham gia các hoạt động và cuộc thi học thuật nhằm rèn luyện tư duy và kỹ năng thực hành:
 
-- **Cuộc thi PROCON HUTECH 2025**  
-  Chủ đề: *Cẩm nang kết nối định mệnh*  
-  Thời gian: **28  29/11/2025**  
-   Cuộc thi giúp mình nâng cao khả năng làm việc nhóm, tư duy logic và giải quyết bài toán trong thời gian giới hạn.
+- **Cuộc thi PROCON HUTECH 2025**
+  Chủ đề: *Cẩm nang kết nối định mệnh*
+  Thời gian: **28 29/11/2025**
+  Cuộc thi giúp mình nâng cao khả năng làm việc nhóm, tư duy logic và giải quyết bài toán trong thời gian giới hạn.
+
+<div class="about-image-container" data-aos="zoom-in">
+<div class="image-frame">
 
 ![Tham gia Cuộc thi PROCON HUTECH 2025](/images/procon.jpg)
+
+</div>
+</div>
 *Tham gia Cuộc thi PROCON HUTECH 2025*
 
-- **CUỘC THI CTF  THE MAZE OF SHADOWS 2025**   
-  Thời gian: **25/11/2025**  
-   Qua cuộc thi CTF, mình có cơ hội tiếp cận sâu hơn với các kiến thức về **an toàn thông tin**, tư duy phân tích, và cách tiếp cận các bài toán bảo mật trong môi trường thực tế.
+- **CUỘC THI CTF THE MAZE OF SHADOWS 2025**
+  Thời gian: **25/11/2025**
+  Qua cuộc thi CTF, mình có cơ hội tiếp cận sâu hơn với các kiến thức về **an toàn thông tin**, tư duy phân tích, và cách tiếp cận các bài toán bảo mật trong môi trường thực tế.
+
+<div class="about-image-container" data-aos="flip-left">
+<div class="image-frame">
 
 ![Chinh phục thử thách tại CTF 2025](/images/CTF.jpg)
+
+</div>
+</div>
 *Chinh phục thử thách tại CTF 2025*
 
-###  Chứng chỉ học thuật  Cisco Networking Academy
+### Chứng chỉ học thuật Cisco Networking Academy
 
 Bên cạnh các cuộc thi và hoạt động thực hành, mình cũng hoàn thành một số **chứng chỉ quốc tế từ Cisco Networking Academy**, giúp củng cố kiến thức nền tảng về mạng máy tính và lập trình web hiện đại:
 

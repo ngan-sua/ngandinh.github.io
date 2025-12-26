@@ -9,7 +9,7 @@
             <span class="article-category">Technology</span>
             <h2 class="article-title" style="font-size: 1.4rem;"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
             <div class="article-meta">
-                <span>{{ .Date.Format "02/01/2006" }}</span>
+                {{ if gt .Date.Year 1 }}<span>{{ .Date.Format "02/01/2006" }}</span>{{ end }}
             </div>
             <p class="article-excerpt" style="font-size: 0.95rem;">{{ .Summary }}</p>
             <a href="{{ .RelPermalink }}" class="read-more" style="font-size: 0.9rem;">Đọc thêm →</a>

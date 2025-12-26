@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on ĐÌNH NGÂN BLOG</title>
-    <link>//localhost:1313/categories/security/</link>
+    <link>https://ngan-sua.github.io/ngandinh.github.io/categories/security/</link>
     <description>Recent content in Security on ĐÌNH NGÂN BLOG</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ngan-sua.github.io/ngandinh.github.io/categories/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bảo mật cơ bản trong lập trình mạng</title>
-      <link>//localhost:1313/posts/bai-viet-7/</link>
+      <link>https://ngan-sua.github.io/ngandinh.github.io/posts/bai-viet-7/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/bai-viet-7/</guid>
+      <guid>https://ngan-sua.github.io/ngandinh.github.io/posts/bai-viet-7/</guid>
       <description>&lt;p&gt;Mạng máy tính là môi trường mở, nơi dữ liệu luôn phải di chuyển qua nhiều thiết bị trung gian. Nếu không được bảo vệ đúng cách, thông tin có thể bị đánh cắp, chỉnh sửa hoặc giả mạo mà người dùng không hề hay biết.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tổng-quan-về-bảo-mật-trong-lập-trình-mạng&#34;&gt;1. Tổng quan về bảo mật trong lập trình mạng&lt;/h2&gt;&#xA;&lt;p&gt;Bảo mật mạng tập trung vào việc &lt;strong&gt;bảo vệ dữ liệu khi truyền tải&lt;/strong&gt; và &lt;strong&gt;ngăn chặn các truy cập trái phép&lt;/strong&gt; vào hệ thống.&lt;br&gt;&#xA;Lập trình viên cần hiểu rằng mọi dữ liệu đến từ mạng đều &lt;strong&gt;không đáng tin cậy&lt;/strong&gt; cho đến khi được kiểm chứng.&lt;/p&gt;</description>
     </item>
   </channel>

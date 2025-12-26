@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
 <head>
@@ -8,7 +8,7 @@
         content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
     <meta name="author" content="{{ .Site.Params.author }}">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="{{ " /css/style.css" | relURL }}">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 
@@ -27,18 +27,14 @@
                     {{ range .Site.Menus.main }}
                     <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
                     {{ end }}
-                    <li><a href="{{ " /categories/" | relURL }}">Categories</a></li>
+                    <li><a href="/categories/">Categories</a></li>
                     <li class="nav-search-item">
-                        <form action="{{ " /search/" | relURL }}" method="get" class="nav-search-form">
-                            <input type="text" name="q" class="nav-search-input" placeholder="Tìm kiếm bài viết...">
-                            <button type="submit" class="nav-search-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="11" cy="11" r="8"></circle>
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                </svg>
-                            </button>
-                        </form>
+                        <div class="nav-search-wrapper">
+                            <form action="/search/" method="get">
+                                <input type="text" name="q" class="nav-search-input" placeholder="Tìm kiếm...">
+                            </form>
+                            <span class="search-icon">🔍</span>
+                        </div>
                     </li>
                 </ul>
             </nav>
@@ -59,53 +55,48 @@
     </div>
 
     <footer>
-        <div class="container footer-grid">
-            <div class="footer-widget">
-                <div class="logo-group" style="margin-bottom: 1.5rem;">
-                    <div class="logo-icon">N</div>
-                    <h1 style="font-size: 1.1rem; font-weight: 700; color: var(--accent-cyan); margin: 0;">ĐÌNH NGÂN IT
-                        BLOG</h1>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget footer-brand">
+                    <div class="logo-group" style="margin-bottom: 1.5rem;">
+                        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.2rem;">N</div>
+                        <div class="logo-text">
+                            <h2 style="font-size: 1.5rem; margin: 0;">{{ .Site.Title }}</h2>
+                        </div>
+                    </div>
+                    <p>Chia sẻ kiến thức chuyên sâu về Lập trình Mạng, Java, JavaScript và các công nghệ mới nhất. Cùng
+                        nhau học hỏi và phát triển.</p>
                 </div>
-                <p style="text-align: left; line-height: 1.7;">Chia sẻ kiến thức chuyên sâu về lập trình mạng, bảo mật
-                    và công nghệ. Nơi hành trình lập trình của bạn bắt đầu với tư duy hệ thống và chuyên nghiệp.</p>
-                <div class="footer-socials">
-                    <a href="{{ .Site.Params.social_fb }}" class="social-icon-sm">FB</a>
-                    <a href="{{ .Site.Params.social_gh }}" class="social-icon-sm">GH</a>
-                    <a href="{{ .Site.Params.social_tt }}" class="social-icon-sm">TT</a>
+
+                <div class="footer-widget footer-links">
+                    <h3>Khám phá</h3>
+                    <ul>
+                        <li><a href="/">➤ Trang chủ</a></li>
+                        <li><a href="/about/">➤ Về tác giả</a></li>
+                        <li><a href="/categories/">➤ Chuyên mục</a></li>
+                        <li><a href="/contact/">➤ Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget footer-contact">
+                    <h3>Kết nối</h3>
+                    <div class="social-icons-footer">
+                        <a href="#" class="footer-social-link" title="Facebook">FB</a>
+                        <a href="#" class="footer-social-link" title="GitHub">GH</a>
+                        <a href="#" class="footer-social-link" title="LinkedIn">IN</a>
+                        <a href="mailto:{{ .Site.Params.email }}" class="footer-social-link" title="Email">✉</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="footer-widget">
-                <h4 style="color: var(--text-primary); margin-bottom: 1.5rem; font-weight: 700;">Khám phá</h4>
-                <ul class="footer-links">
-                    <li><a href="{{ " /" | relURL }}">Trang chủ</a></li>
-                    <li><a href="{{ " /about/" | relURL }}">Giới thiệu bản thân</a></li>
-                    <li><a href="{{ " /contact/" | relURL }}">Liên hệ với mình</a></li>
-                    <li><a href="{{ " /categories/" | relURL }}">Chuyên mục bài viết</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-widget">
-                <h4 style="color: var(--text-primary); margin-bottom: 1.5rem; font-weight: 700;">Newsletter</h4>
-                <p style="text-align: left; margin-bottom: 1.5rem;">Nhận thông báo mới nhất về các bài viết lập trình
-                    mạng và bảo mật.</p>
-                <form style="display: flex; gap: 8px;">
-                    <input type="email" class="search-box" placeholder="Email của bạn..."
-                        style="margin: 0; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); padding: 12px;">
-                    <button class="btn-cert" style="padding: 0 20px; font-size: 0.8rem; height: 42px;">Gửi</button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom"
-            style="border-top: 1px solid var(--border-color); padding: 2rem 0; margin-top: 4rem; opacity: 0.6; font-size: 0.85rem;">
-            <div class="container">
-                <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }} - All Rights Reserved. Crafted with Passion.</p>
+            <div class="footer-bottom">
+                <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. Designed with ❤️ for Networking Passion.</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="{{ " /js/script.js" | relURL }}"></script>
+    <script src="/js/script.js"></script>
     <script>
         AOS.init({
             duration: 800,
