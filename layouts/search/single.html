@@ -169,7 +169,7 @@
                 <div class="search-card-title">${item.title}</div>
                 <div class="search-card-meta">
                     <span>📅 ${item.date}</span>
-                    <span>📂 ${item.categories.join(', ')}</span>
+                    <span>📂 ${(item.categories || []).join(', ')}</span>
                 </div>
                 <div class="search-card-summary">${item.summary}</div>
             </a>
