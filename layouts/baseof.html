@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
 <head>
@@ -8,7 +8,7 @@
         content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
     <meta name="author" content="{{ .Site.Params.author }}">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <link rel="stylesheet" href="{{ " css/style.css" | relURL }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 
@@ -27,9 +27,9 @@
                     {{ range .Site.Menus.main }}
                     <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
                     {{ end }}
-                    <li><a href="{{ "categories/" | relURL }}">Categories</a></li>
+                    <li><a href="{{ " categories/" | relURL }}">Categories</a></li>
                     <li class="nav-search-item">
-                        <form action="{{ "search/" | relURL }}" method="get" class="nav-search-form">
+                        <form action="{{ " search/" | relURL }}" method="get" class="nav-search-form">
                             <input type="text" name="q" class="nav-search-input" placeholder="Tìm kiếm bài viết...">
                             <button type="submit" class="nav-search-btn">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -41,6 +41,24 @@
                         </form>
                     </li>
                 </ul>
+                <button id="dark-mode-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
@@ -78,10 +96,10 @@
             <div class="footer-widget">
                 <h4 style="color: var(--text-primary); margin-bottom: 1.5rem; font-weight: 700;">Khám phá</h4>
                 <ul class="footer-links">
-                    <li><a href="{{ "/" | relURL }}">Trang chủ</a></li>
-                    <li><a href="{{ "about/" | relURL }}">Giới thiệu bản thân</a></li>
-                    <li><a href="{{ "contact/" | relURL }}">Liên hệ với mình</a></li>
-                    <li><a href="{{ "categories/" | relURL }}">Chuyên mục bài viết</a></li>
+                    <li><a href="{{ " /" | relURL }}">Trang chủ</a></li>
+                    <li><a href="{{ " about/" | relURL }}">Giới thiệu bản thân</a></li>
+                    <li><a href="{{ " contact/" | relURL }}">Liên hệ với mình</a></li>
+                    <li><a href="{{ " categories/" | relURL }}">Chuyên mục bài viết</a></li>
                 </ul>
             </div>
 
@@ -105,7 +123,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="{{ "js/script.js" | relURL }}"></script>
+    <script src="{{ " js/script.js" | relURL }}"></script>
     <script>
         AOS.init({
             duration: 800,

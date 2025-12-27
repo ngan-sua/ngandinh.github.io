@@ -1,3 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on ĐÌNH NGÂN BLOG</title><link>https://ngan-sua.github.io/ngandinh.github.io/categories/java/</link><description>Recent content in Java on ĐÌNH NGÂN BLOG</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ngan-sua.github.io/ngandinh.github.io/categories/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Lập trình Socket trong Java – Cơ bản</title><link>https://ngan-sua.github.io/ngandinh.github.io/posts/bai-viet-3/</link><pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate><guid>https://ngan-sua.github.io/ngandinh.github.io/posts/bai-viet-3/</guid><description>&lt;p&gt;Socket là một trong những khái niệm nền tảng của lập trình mạng, cho phép hai chương trình đang chạy trên các máy tính khác nhau giao tiếp với nhau thông qua mạng TCP/IP. Trong Java, lập trình Socket được sử dụng rộng rãi để xây dựng các ứng dụng client – server ở mức thấp, giúp lập trình viên hiểu rõ cơ chế truyền dữ liệu qua mạng.&lt;/p&gt;
-&lt;h2 id="1-khái-niệm-socket-trong-java"&gt;1. Khái niệm Socket trong Java&lt;/h2&gt;
-&lt;p&gt;Socket có thể được hiểu là &lt;strong&gt;điểm cuối của một kênh giao tiếp&lt;/strong&gt; giữa hai tiến trình trên mạng. Java cung cấp các lớp hỗ trợ Socket trong gói &lt;code&gt;java.net&lt;/code&gt;, cho phép lập trình viên dễ dàng triển khai mô hình Client – Server.&lt;/p&gt;</description></item><item><title>Tổng quan lập trình mạng và vai trò của Java &amp; JavaScript</title><link>https://ngan-sua.github.io/ngandinh.github.io/posts/bai-viet-1/</link><pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate><guid>https://ngan-sua.github.io/ngandinh.github.io/posts/bai-viet-1/</guid><description>&lt;p&gt;Lập trình mạng là nền tảng cốt lõi của Internet hiện đại, cho phép các thiết bị và ứng dụng giao tiếp, trao đổi dữ liệu với nhau thông qua mạng máy tính. Từ website, ứng dụng di động cho đến các hệ thống phân tán quy mô lớn, tất cả đều dựa trên lập trình mạng. Trong bài viết này, mình sẽ trình bày tổng quan về lập trình mạng và phân tích vai trò của &lt;strong&gt;Java&lt;/strong&gt; và &lt;strong&gt;JavaScript&lt;/strong&gt; trong lĩnh vực này.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on ĐÌNH NGÂN BLOG</title>
+    <link>http://localhost:1313/categories/java/</link>
+    <description>Recent content in Java on ĐÌNH NGÂN BLOG</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Tue, 23 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lập trình Socket trong Java – Cơ bản</title>
+      <link>http://localhost:1313/posts/bai-viet-3/</link>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bai-viet-3/</guid>
+      <description>&lt;p&gt;Socket là một trong những khái niệm nền tảng của lập trình mạng, cho phép hai chương trình đang chạy trên các máy tính khác nhau giao tiếp với nhau thông qua mạng TCP/IP. Trong Java, lập trình Socket được sử dụng rộng rãi để xây dựng các ứng dụng client – server ở mức thấp, giúp lập trình viên hiểu rõ cơ chế truyền dữ liệu qua mạng.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-khái-niệm-socket-trong-java&#34;&gt;1. Khái niệm Socket trong Java&lt;/h2&gt;&#xA;&lt;p&gt;Socket có thể được hiểu là &lt;strong&gt;điểm cuối của một kênh giao tiếp&lt;/strong&gt; giữa hai tiến trình trên mạng. Java cung cấp các lớp hỗ trợ Socket trong gói &lt;code&gt;java.net&lt;/code&gt;, cho phép lập trình viên dễ dàng triển khai mô hình Client – Server.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tổng quan lập trình mạng và vai trò của Java &amp; JavaScript</title>
+      <link>http://localhost:1313/posts/bai-viet-1/</link>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bai-viet-1/</guid>
+      <description>&lt;p&gt;Lập trình mạng là nền tảng cốt lõi của Internet hiện đại, cho phép các thiết bị và ứng dụng giao tiếp, trao đổi dữ liệu với nhau thông qua mạng máy tính. Từ website, ứng dụng di động cho đến các hệ thống phân tán quy mô lớn, tất cả đều dựa trên lập trình mạng. Trong bài viết này, mình sẽ trình bày tổng quan về lập trình mạng và phân tích vai trò của &lt;strong&gt;Java&lt;/strong&gt; và &lt;strong&gt;JavaScript&lt;/strong&gt; trong lĩnh vực này.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
