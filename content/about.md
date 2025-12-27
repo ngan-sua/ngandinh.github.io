@@ -106,7 +106,7 @@ Trong thời gian tới, mình đặt mục tiêu:
 
 ##  Liên hệ
 
-- GitHub: https://github.com/ngan-sua/ngandinh.github.io  
+- GitHub: https://github.com/username  
 - Email: ngan77pro@gmail.com  
 
 Cảm ơn bạn đã ghé thăm blog của mình!
