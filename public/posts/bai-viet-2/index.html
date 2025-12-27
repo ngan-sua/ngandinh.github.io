@@ -1,429 +1,49 @@
-<!DOCTYPE html>
-<html lang="vi">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Mô hình Client – Server là nền tảng của hầu hết các hệ thống mạng và ứng dụng web hiện nay. Hầu như mọi thao tác trên Internet như truy cập website, đăng nhập hệ thống hay gọi API đều tuân theo kiến trúc này. Việc hiểu rõ mô hình Client – Server giúp lập trình viên nắm vững cách các ứng dụng giao tiếp và trao đổi dữ liệu qua mạng.">
-    <meta name="author" content="Trương Đình Ngân">
-    <title>Mô hình Client – Server trong lập trình mạng | ĐÌNH NGÂN BLOG</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-</head>
-
-<body>
-    <header>
-        <div class="container nav-container">
-            <div class="logo-group">
-                <div class="logo-icon">N</div>
-                <div class="logo-text">
-                    <h1>ĐÌNH NGÂN BLOG</h1>
-                    <p>Tận tâm chia sẻ kiến thức chuyên sâu về Lập trình Mạng, Java, JavaScript và các công nghệ mới nhất.</p>
-                </div>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    
-                    <li><a href="/">Home</a></li>
-                    
-                    <li><a href="/about/">About</a></li>
-                    
-                    <li><a href="/contact/">Contact</a></li>
-                    
-                    <li><a href="/categories/">Categories</a></li>
-                    <li class="nav-search-item">
-                        <form action="/search/" method="get" class="nav-search-form">
-                            <input type="text" name="q" class="nav-search-input" placeholder="Tìm kiếm bài viết...">
-                            <button type="submit" class="nav-search-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="11" cy="11" r="8"></circle>
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                </svg>
-                            </button>
-                        </form>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="main-wrapper">
-            <main>
-                
-<article class="single-post-card"
-    style="background: var(--bg-card); padding: 3rem; border-radius: 20px; border: 1px solid var(--border-color);">
-    <nav class="breadcrumb">
-        <a href="/">Trang chủ</a> &raquo;
-        <a href="/posts/">Bài viết</a> &raquo;
-        <span>Mô hình Client – Server trong lập trình mạng</span>
-    </nav>
-
-    <div class="single-post-header">
-        <span class="article-category">Detailed Insights</span>
-        <h1 class="single-post-title">Mô hình Client – Server trong lập trình mạng</h1>
-        <div class="article-meta">
-            <span>📅 23/12/2025</span>
-            <span>⏱️ 3 phút đọc</span>
-            
-            <span class="meta-divider">|</span>
-            <span>📂
-                
-                <a href="/categories/networking" class="category-badge">Networking</a>
-                
-                <a href="/categories/client-server" class="category-badge">Client-Server</a>
-                
-            </span>
-            
-        </div>
-    </div>
-
-    
-    <div class="post-toc">
-        <h4 class="toc-title">Mục lục</h4>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#1-khái-niệm-mô-hình-client--server">1. Khái niệm mô hình Client – Server</a></li>
-    <li><a href="#2-quy-trình-hoạt-động">2. Quy trình hoạt động</a></li>
-    <li><a href="#3-ví-dụ-minh-họa-bằng-code">3. Ví dụ minh họa bằng code</a>
-      <ul>
-        <li><a href="#java-đọc-dữ-liệu-từ-socket-server">Java: Đọc dữ liệu từ Socket (Server)</a></li>
-        <li><a href="#javascript-gửi-request-từ-client-axios">JavaScript: Gửi Request từ Client (Axios)</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-ưu-điểm-và-hạn-chế-của-mô-hình-client--server">4. Ưu điểm và hạn chế của mô hình Client – Server</a></li>
-    <li><a href="#5-ứng-dụng-thực-tế">5. Ứng dụng thực tế</a></li>
-    <li><a href="#kết-luận">Kết luận</a></li>
-  </ul>
-</nav>
-    </div>
-    
-    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
-    <div class="post-content-inner">
-        <p>Mô hình <strong>Client – Server</strong> là nền tảng của hầu hết các hệ thống mạng và ứng dụng web hiện nay. Hầu như mọi thao tác trên Internet như truy cập website, đăng nhập hệ thống hay gọi API đều tuân theo kiến trúc này. Việc hiểu rõ mô hình Client – Server giúp lập trình viên nắm vững cách các ứng dụng giao tiếp và trao đổi dữ liệu qua mạng.</p>
-<h2 id="1-khái-niệm-mô-hình-client--server">1. Khái niệm mô hình Client – Server</h2>
-<p>Trong kiến trúc Client – Server, công việc được phân chia rõ ràng giữa hai thành phần chính:</p>
-<ul>
-<li><strong>Client</strong>: Thiết bị hoặc chương trình gửi yêu cầu (Request) đến Server<br>
-Ví dụ: Trình duyệt web, ứng dụng di động, phần mềm desktop</li>
-<li><strong>Server</strong>: Máy chủ tiếp nhận yêu cầu, xử lý và trả về kết quả (Response)</li>
-</ul>
-<p>Client và Server giao tiếp with nhau thông qua các <strong>giao thức mạng</strong> như HTTP, TCP/IP hoặc WebSocket.</p>
-<h2 id="2-quy-trình-hoạt-động">2. Quy trình hoạt động</h2>
-<p>Quy trình giao tiếp trong mô hình Client – Server thường diễn ra theo các bước sau:</p>
-<ol>
-<li>Client gửi yêu cầu đến Server thông qua mạng</li>
-<li>Server tiếp nhận và xử lý yêu cầu</li>
-<li>Server trả kết quả về cho Client</li>
-<li>Client hiển thị hoặc xử lý dữ liệu nhận được</li>
-</ol>
-<p>Mô hình này giúp hệ thống dễ quản lý và mở rộng khi số lượng người dùng tăng lên.</p>
-<h2 id="3-ví-dụ-minh-họa-bằng-code">3. Ví dụ minh họa bằng code</h2>
-<h3 id="java-đọc-dữ-liệu-từ-socket-server">Java: Đọc dữ liệu từ Socket (Server)</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>InputStream in <span style="color:#f92672">=</span> socket.<span style="color:#a6e22e">getInputStream</span>();
-</span></span><span style="display:flex;"><span>BufferedReader reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader(<span style="color:#66d9ef">new</span> InputStreamReader(in));
-</span></span><span style="display:flex;"><span>String message <span style="color:#f92672">=</span> reader.<span style="color:#a6e22e">readLine</span>();
-</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Client gửi: &#34;</span> <span style="color:#f92672">+</span> message);
-</span></span></code></pre></div><p>Đoạn code trên minh họa cách Server trong Java nhận dữ liệu từ Client thông qua Socket.</p>
-<h3 id="javascript-gửi-request-từ-client-axios">JavaScript: Gửi Request từ Client (Axios)</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;/api/v1/profile&#34;</span>)
-</span></span><span style="display:flex;"><span>  .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">response</span> =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">renderUser</span>(<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">data</span>);
-</span></span><span style="display:flex;"><span>  })
-</span></span><span style="display:flex;"><span>  .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">error</span> =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#34;Error:&#34;</span>, <span style="color:#a6e22e">error</span>);
-</span></span><span style="display:flex;"><span>  });
-</span></span></code></pre></div><p>Client gửi yêu cầu HTTP đến Server và nhận dữ liệu phản hồi để hiển thị.</p>
-<h2 id="4-ưu-điểm-và-hạn-chế-của-mô-hình-client--server">4. Ưu điểm và hạn chế của mô hình Client – Server</h2>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Tiêu chí</th>
-          <th style="text-align: left">Ưu điểm</th>
-          <th style="text-align: left">Hạn chế</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>Quản lý</strong></td>
-          <td style="text-align: left">Tập trung tại Server</td>
-          <td style="text-align: left">Server có thể bị quá tải</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Bảo mật</strong></td>
-          <td style="text-align: left">Dễ kiểm soát truy cập</td>
-          <td style="text-align: left">Điểm yếu tập trung (Single point of failure)</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Mở rộng</strong></td>
-          <td style="text-align: left">Dễ dàng nâng cấp hạ tầng</td>
-          <td style="text-align: left">Chi phí hạ tầng cao</td>
-      </tr>
-  </tbody>
-</table>
-<h2 id="5-ứng-dụng-thực-tế">5. Ứng dụng thực tế</h2>
-<p>Mô hình Client – Server được áp dụng rộng rãi trong:</p>
-<ul>
-<li>Website và Web API</li>
-<li>Ứng dụng di động</li>
-<li>Hệ thống quản lý doanh nghiệp</li>
-<li>Dịch vụ ngân hàng và thương mại điện tử</li>
-</ul>
-<p>Trong thực tế, các hệ thống lớn thường kết hợp thêm các mô hình khác như Load Balancing hoặc Microservices để khắc phục hạn chế của Client – Server truyền thống.</p>
-<h2 id="kết-luận">Kết luận</h2>
-<p>Mô hình Client – Server là kiến thức nền tảng quan trọng trong lập trình mạng. Việc nắm vững kiến trúc này giúp lập trình viên hiểu rõ cách các hệ thống hoạt động, từ đó xây dựng các ứng dụng mạng ổn định, an toàn và dễ mở rộng.</p>
-
-    </div>
-
-    
-    <div class="author-bio-card">
-        <div class="author-bio-info">
-            <h4 class="author-bio-name">Trương Đình Ngân</h4>
-            <p class="author-bio-text">Chuyên gia về Lập trình Mạng và Phát triển Phần mềm. Đam mê chia sẻ kiến thức
-                cộng đồng và xây dựng các giải pháp công nghệ hiện đại. Cùng kết nối và học hỏi tại Blog này nhé!</p>
-            <div class="author-bio-links">
-                <a href="https://facebook.com/truongdinhngan.it" class="author-social-link">Facebook</a>
-                <a href="https://github.com/ngan-sua/ngandinh.github.io.git" class="author-social-link">GitHub</a>
-                <a href="/contact/" class="author-social-link">Liên hệ</a>
-            </div>
-        </div>
-    </div>
-</article>
-
-            </main>
-            <aside class="sidebar">
-    
-    <div class="sidebar-widget">
-        <h3 class="widget-title">Tìm kiếm</h3>
-        <form action="/search/" method="get">
-            <input type="text" name="q" class="search-box" placeholder="Nhập từ khóa...">
-        </form>
-    </div>
-
-    
-    <div class="sidebar-widget profile-card-modern">
-        <img src="/images/avatar.jpg" alt="Trương Đình Ngân" class="modern-avatar">
-        <h3 class="widget-title" style="border:none; padding:0; margin-bottom: 5px;">About Me</h3>
-        <h4 class="modern-name">Trương Đình Ngân</h4>
-        <p class="modern-bio">
-            Sinh viên năm thứ 4 chuyên ngành Công nghệ thông tin tại Trường Đại học Công nghệ TP.HCM (HUTECH).
-            Mình đam mê tìm hiểu về lập trình mạng, bảo mật và xây dựng các hệ thống phần mềm hiệu quả.
-        </p>
-
-        <div class="modern-meta">
-            <div class="meta-item">
-                <i class="icon">📧</i> ngan77pro@gmail.com
-            </div>
-            <div class="meta-item">
-                <i class="icon">📞</i> 0813439579
-            </div>
-        </div>
-
-        <div class="modern-socials">
-            <a href="https://github.com/ngan-sua/ngandinh.github.io.git" class="social-icon-sm" title="GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-            </a>
-            <a href="https://www.tiktok.com/@nganne77?is_from_webapp=1&sender_device=pc" class="social-icon-sm"
-                title="TikTok">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-                </svg>
-            </a>
-            <a href="https://www.facebook.com/share/1W6XR4GnKL/?mibextid=wwXIfr" class="social-icon-sm"
-                title="Facebook">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
-            </a>
-        </div>
-    </div>
-
-    
-    <div class="sidebar-widget">
-        <h3 class="widget-title">Bài viết mới nhất</h3>
-        <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
-            
-            <li style="margin-bottom: 12px;">
-                <a href="/posts/bai-viet-7/"
-                    style="color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px;">Bảo mật cơ bản trong lập trình mạng</a>
-                <span style="font-size: 0.8rem; opacity: 0.6;"> 23/12/2025</span>
-            </li>
-            
-            <li style="margin-bottom: 12px;">
-                <a href="/posts/bai-viet-9/"
-                    style="color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px;">Định hướng học lập trình mạng với Java &amp; JavaScript</a>
-                <span style="font-size: 0.8rem; opacity: 0.6;"> 23/12/2025</span>
-            </li>
-            
-            <li style="margin-bottom: 12px;">
-                <a href="/posts/bai-viet-4/"
-                    style="color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px;">Giao thức HTTP và cách JavaScript giao tiếp với Server</a>
-                <span style="font-size: 0.8rem; opacity: 0.6;"> 23/12/2025</span>
-            </li>
-            
-            <li style="margin-bottom: 12px;">
-                <a href="/posts/bai-viet-3/"
-                    style="color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px;">Lập trình Socket trong Java – Cơ bản</a>
-                <span style="font-size: 0.8rem; opacity: 0.6;"> 23/12/2025</span>
-            </li>
-            
-            <li style="margin-bottom: 12px;">
-                <a href="/posts/bai-viet-2/"
-                    style="color: var(--text-primary); font-weight: 500; display: block; margin-bottom: 4px;">Mô hình Client – Server trong lập trình mạng</a>
-                <span style="font-size: 0.8rem; opacity: 0.6;"> 23/12/2025</span>
-            </li>
-            
-        </ul>
-    </div>
-
-    
-    <div class="sidebar-widget">
-        <h3 class="widget-title">Chuyên mục</h3>
-        <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
-            
-            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
-                <a href="/categories/client-server/" style="color: inherit; transition: var(--transition);">Client-Server</a>
-                <span style="opacity: 0.5;">(1)</span>
-            </li>
-            
-            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
-                <a href="/categories/development/" style="color: inherit; transition: var(--transition);">Development</a>
-                <span style="opacity: 0.5;">(4)</span>
-            </li>
-            
-            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
-                <a href="/categories/http/" style="color: inherit; transition: var(--transition);">HTTP</a>
-                <span style="opacity: 0.5;">(1)</span>
-            </li>
-            
-            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
-                <a href="/categories/java/" style="color: inherit; transition: var(--transition);">Java</a>
-                <span style="opacity: 0.5;">(2)</span>
-            </li>
-            
-            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
-                <a href="/categories/javascript/" style="color: inherit; transition: var(--transition);">JavaScript</a>
-                <span style="opacity: 0.5;">(2)</span>
-            </li>
-            
-            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
-                <a href="/categories/json/" style="color: inherit; transition: var(--transition);">JSON</a>
-                <span style="opacity: 0.5;">(1)</span>
-            </li>
-            
-            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
-                <a href="/categories/networking/" style="color: inherit; transition: var(--transition);">Networking</a>
-                <span style="opacity: 0.5;">(7)</span>
-            </li>
-            
-            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
-                <a href="/categories/realtime/" style="color: inherit; transition: var(--transition);">Realtime</a>
-                <span style="opacity: 0.5;">(1)</span>
-            </li>
-            
-            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
-                <a href="/categories/rest-api/" style="color: inherit; transition: var(--transition);">REST API</a>
-                <span style="opacity: 0.5;">(1)</span>
-            </li>
-            
-            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
-                <a href="/categories/security/" style="color: inherit; transition: var(--transition);">Security</a>
-                <span style="opacity: 0.5;">(1)</span>
-            </li>
-            
-            <li style="margin-bottom: 12px; display: flex; justify-content: space-between;">
-                <a href="/categories/websocket/" style="color: inherit; transition: var(--transition);">WebSocket</a>
-                <span style="opacity: 0.5;">(1)</span>
-            </li>
-            
-        </ul>
-    </div>
-</aside>
-        </div>
-    </div>
-
-    <div id="scroll-to-top" title="Lên đầu trang">
-        <span style="font-size: 1.5rem;">↑</span>
-    </div>
-
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-widget">
-                <div class="logo-group" style="margin-bottom: 1.5rem;">
-                    <div class="logo-icon">N</div>
-                    <h1 style="font-size: 1.1rem; font-weight: 700; color: var(--accent-cyan); margin: 0;">ĐÌNH NGÂN IT
-                        BLOG</h1>
-                </div>
-                <p style="text-align: left; line-height: 1.7;">Chia sẻ kiến thức chuyên sâu về lập trình mạng, bảo mật
-                    và công nghệ. Nơi hành trình lập trình của bạn bắt đầu với tư duy hệ thống và chuyên nghiệp.</p>
-                <div class="footer-socials">
-                    <a href="https://facebook.com/truongdinhngan.it" class="social-icon-sm">FB</a>
-                    <a href="https://github.com/ngan-sua/ngandinh.github.io.git" class="social-icon-sm">GH</a>
-                    <a href="https://tiktok.com/@dinhngan.it" class="social-icon-sm">TT</a>
-                </div>
-            </div>
-
-            <div class="footer-widget">
-                <h4 style="color: var(--text-primary); margin-bottom: 1.5rem; font-weight: 700;">Khám phá</h4>
-                <ul class="footer-links">
-                    <li><a href="/">Trang chủ</a></li>
-                    <li><a href="/about/">Giới thiệu bản thân</a></li>
-                    <li><a href="/contact/">Liên hệ với mình</a></li>
-                    <li><a href="/categories/">Chuyên mục bài viết</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-widget">
-                <h4 style="color: var(--text-primary); margin-bottom: 1.5rem; font-weight: 700;">Newsletter</h4>
-                <p style="text-align: left; margin-bottom: 1.5rem;">Nhận thông báo mới nhất về các bài viết lập trình
-                    mạng và bảo mật.</p>
-                <form style="display: flex; gap: 8px;">
-                    <input type="email" class="search-box" placeholder="Email của bạn..."
-                        style="margin: 0; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); padding: 12px;">
-                    <button class="btn-cert" style="padding: 0 20px; font-size: 0.8rem; height: 42px;">Gửi</button>
-                </form>
-            </div>
-        </div>
-        <div class="footer-bottom"
-            style="border-top: 1px solid var(--border-color); padding: 2rem 0; margin-top: 4rem; opacity: 0.6; font-size: 0.85rem;">
-            <div class="container">
-                <p>&copy; 2025 ĐÌNH NGÂN BLOG - All Rights Reserved. Crafted with Passion.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="/js/script.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-
-        
-        const scrollToTopBtn = document.getElementById('scroll-to-top');
-        window.onscroll = function () {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
-            }
-        };
-
-        scrollToTopBtn.onclick = function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        };
-    </script>
-</body>
-
-</html>
+<!doctype html><html lang=vi><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Mô hình Client – Server là nền tảng của hầu hết các hệ thống mạng và ứng dụng web hiện nay. Hầu như mọi thao tác trên Internet như truy cập website, đăng nhập hệ thống hay gọi API đều tuân theo kiến trúc này. Việc hiểu rõ mô hình Client – Server giúp lập trình viên nắm vững cách các ứng dụng giao tiếp và trao đổi dữ liệu qua mạng."><meta name=author content="Trương Đình Ngân"><title>Mô hình Client – Server trong lập trình mạng | ĐÌNH NGÂN BLOG</title><link rel=stylesheet href=/ngandinh.github.io/css/style.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css></head><body><header><div class="container nav-container"><div class=logo-group><div class=logo-icon>N</div><div class=logo-text><h1>ĐÌNH NGÂN BLOG</h1><p>Tận tâm chia sẻ kiến thức chuyên sâu về Lập trình Mạng, Java, JavaScript và các công nghệ mới nhất.</p></div></div><nav><ul class=nav-links><li><a href=/ngandinh.github.io/>Home</a></li><li><a href=/ngandinh.github.io/about/>About</a></li><li><a href=/ngandinh.github.io/contact/>Contact</a></li><li><a href=/ngandinh.github.io/categories/>Categories</a></li><li class=nav-search-item><form action=/ngandinh.github.io/search/ method=get class=nav-search-form><input type=text name=q class=nav-search-input placeholder="Tìm kiếm bài viết...">
+<button type=submit class=nav-search-btn>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></form></li></ul></nav></div></header><div class=container><div class=main-wrapper><main><article class=single-post-card style="background:var(--bg-card);padding:3rem;border-radius:20px;border:1px solid var(--border-color)"><nav class=breadcrumb><a href=/>Trang chủ</a> &#187;
+<a href=/posts/>Bài viết</a> &#187;
+<span>Mô hình Client – Server trong lập trình mạng</span></nav><div class=single-post-header><span class=article-category>Detailed Insights</span><h1 class=single-post-title>Mô hình Client – Server trong lập trình mạng</h1><div class=article-meta><span>📅 23/12/2025</span>
+<span>⏱️ 3 phút đọc</span>
+<span class=meta-divider>|</span>
+<span>📂
+<a href=/ngandinh.github.io/categories/networking class=category-badge>Networking</a>
+<a href=/ngandinh.github.io/categories/client-server class=category-badge>Client-Server</a></span></div></div><div class=post-toc><h4 class=toc-title>Mục lục</h4><nav id=TableOfContents><ul><li><a href=#1-khái-niệm-mô-hình-client--server>1. Khái niệm mô hình Client – Server</a></li><li><a href=#2-quy-trình-hoạt-động>2. Quy trình hoạt động</a></li><li><a href=#3-ví-dụ-minh-họa-bằng-code>3. Ví dụ minh họa bằng code</a><ul><li><a href=#java-đọc-dữ-liệu-từ-socket-server>Java: Đọc dữ liệu từ Socket (Server)</a></li><li><a href=#javascript-gửi-request-từ-client-axios>JavaScript: Gửi Request từ Client (Axios)</a></li></ul></li><li><a href=#4-ưu-điểm-và-hạn-chế-của-mô-hình-client--server>4. Ưu điểm và hạn chế của mô hình Client – Server</a></li><li><a href=#5-ứng-dụng-thực-tế>5. Ứng dụng thực tế</a></li><li><a href=#kết-luận>Kết luận</a></li></ul></nav></div><hr style="border:0;border-top:1px solid var(--border-color);margin:2rem 0"><div class=post-content-inner><p>Mô hình <strong>Client – Server</strong> là nền tảng của hầu hết các hệ thống mạng và ứng dụng web hiện nay. Hầu như mọi thao tác trên Internet như truy cập website, đăng nhập hệ thống hay gọi API đều tuân theo kiến trúc này. Việc hiểu rõ mô hình Client – Server giúp lập trình viên nắm vững cách các ứng dụng giao tiếp và trao đổi dữ liệu qua mạng.</p><h2 id=1-khái-niệm-mô-hình-client--server>1. Khái niệm mô hình Client – Server</h2><p>Trong kiến trúc Client – Server, công việc được phân chia rõ ràng giữa hai thành phần chính:</p><ul><li><strong>Client</strong>: Thiết bị hoặc chương trình gửi yêu cầu (Request) đến Server<br>Ví dụ: Trình duyệt web, ứng dụng di động, phần mềm desktop</li><li><strong>Server</strong>: Máy chủ tiếp nhận yêu cầu, xử lý và trả về kết quả (Response)</li></ul><p>Client và Server giao tiếp with nhau thông qua các <strong>giao thức mạng</strong> như HTTP, TCP/IP hoặc WebSocket.</p><h2 id=2-quy-trình-hoạt-động>2. Quy trình hoạt động</h2><p>Quy trình giao tiếp trong mô hình Client – Server thường diễn ra theo các bước sau:</p><ol><li>Client gửi yêu cầu đến Server thông qua mạng</li><li>Server tiếp nhận và xử lý yêu cầu</li><li>Server trả kết quả về cho Client</li><li>Client hiển thị hoặc xử lý dữ liệu nhận được</li></ol><p>Mô hình này giúp hệ thống dễ quản lý và mở rộng khi số lượng người dùng tăng lên.</p><h2 id=3-ví-dụ-minh-họa-bằng-code>3. Ví dụ minh họa bằng code</h2><h3 id=java-đọc-dữ-liệu-từ-socket-server>Java: Đọc dữ liệu từ Socket (Server)</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>InputStream in <span style=color:#f92672>=</span> socket.<span style=color:#a6e22e>getInputStream</span>();
+</span></span><span style=display:flex><span>BufferedReader reader <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BufferedReader(<span style=color:#66d9ef>new</span> InputStreamReader(in));
+</span></span><span style=display:flex><span>String message <span style=color:#f92672>=</span> reader.<span style=color:#a6e22e>readLine</span>();
+</span></span><span style=display:flex><span>System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;Client gửi: &#34;</span> <span style=color:#f92672>+</span> message);
+</span></span></code></pre></div><p>Đoạn code trên minh họa cách Server trong Java nhận dữ liệu từ Client thông qua Socket.</p><h3 id=javascript-gửi-request-từ-client-axios>JavaScript: Gửi Request từ Client (Axios)</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>axios</span>.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#34;/api/v1/profile&#34;</span>)
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>response</span> =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>renderUser</span>(<span style=color:#a6e22e>response</span>.<span style=color:#a6e22e>data</span>);
+</span></span><span style=display:flex><span>  })
+</span></span><span style=display:flex><span>  .<span style=color:#66d9ef>catch</span>(<span style=color:#a6e22e>error</span> =&gt; {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;Error:&#34;</span>, <span style=color:#a6e22e>error</span>);
+</span></span><span style=display:flex><span>  });
+</span></span></code></pre></div><p>Client gửi yêu cầu HTTP đến Server và nhận dữ liệu phản hồi để hiển thị.</p><h2 id=4-ưu-điểm-và-hạn-chế-của-mô-hình-client--server>4. Ưu điểm và hạn chế của mô hình Client – Server</h2><table><thead><tr><th style=text-align:left>Tiêu chí</th><th style=text-align:left>Ưu điểm</th><th style=text-align:left>Hạn chế</th></tr></thead><tbody><tr><td style=text-align:left><strong>Quản lý</strong></td><td style=text-align:left>Tập trung tại Server</td><td style=text-align:left>Server có thể bị quá tải</td></tr><tr><td style=text-align:left><strong>Bảo mật</strong></td><td style=text-align:left>Dễ kiểm soát truy cập</td><td style=text-align:left>Điểm yếu tập trung (Single point of failure)</td></tr><tr><td style=text-align:left><strong>Mở rộng</strong></td><td style=text-align:left>Dễ dàng nâng cấp hạ tầng</td><td style=text-align:left>Chi phí hạ tầng cao</td></tr></tbody></table><h2 id=5-ứng-dụng-thực-tế>5. Ứng dụng thực tế</h2><p>Mô hình Client – Server được áp dụng rộng rãi trong:</p><ul><li>Website và Web API</li><li>Ứng dụng di động</li><li>Hệ thống quản lý doanh nghiệp</li><li>Dịch vụ ngân hàng và thương mại điện tử</li></ul><p>Trong thực tế, các hệ thống lớn thường kết hợp thêm các mô hình khác như Load Balancing hoặc Microservices để khắc phục hạn chế của Client – Server truyền thống.</p><h2 id=kết-luận>Kết luận</h2><p>Mô hình Client – Server là kiến thức nền tảng quan trọng trong lập trình mạng. Việc nắm vững kiến trúc này giúp lập trình viên hiểu rõ cách các hệ thống hoạt động, từ đó xây dựng các ứng dụng mạng ổn định, an toàn và dễ mở rộng.</p></div><div class=author-bio-card><div class=author-bio-info><h4 class=author-bio-name>Trương Đình Ngân</h4><p class=author-bio-text>Chuyên gia về Lập trình Mạng và Phát triển Phần mềm. Đam mê chia sẻ kiến thức
+cộng đồng và xây dựng các giải pháp công nghệ hiện đại. Cùng kết nối và học hỏi tại Blog này nhé!</p><div class=author-bio-links><a href=https://facebook.com/truongdinhngan.it class=author-social-link>Facebook</a>
+<a href=https://github.com/ngan-sua/ngandinh.github.io.git class=author-social-link>GitHub</a>
+<a href=/contact/ class=author-social-link>Liên hệ</a></div></div></div></article></main><aside class=sidebar><div class=sidebar-widget><h3 class=widget-title>Tìm kiếm</h3><form action=/ngandinh.github.io/search/ method=get><input type=text name=q class=search-box placeholder="Nhập từ khóa..."></form></div><div class="sidebar-widget profile-card-modern"><img src=/ngandinh.github.io/images/avatar.jpg alt="Trương Đình Ngân" class=modern-avatar><h3 class=widget-title style=border:none;padding:0;margin-bottom:5px>About Me</h3><h4 class=modern-name>Trương Đình Ngân</h4><p class=modern-bio>Sinh viên năm thứ 4 chuyên ngành Công nghệ thông tin tại Trường Đại học Công nghệ TP.HCM (HUTECH).
+Mình đam mê tìm hiểu về lập trình mạng, bảo mật và xây dựng các hệ thống phần mềm hiệu quả.</p><div class=modern-meta><div class=meta-item><i class=icon>📧</i> ngan77pro@gmail.com</div><div class=meta-item><i class=icon>📞</i> 0813439579</div></div><div class=modern-socials><a href=https://github.com/ngan-sua/ngandinh.github.io.git class=social-icon-sm title=GitHub><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374.0.0 5.373.0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931.0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176.0.0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221.0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+</a><a href="https://www.tiktok.com/@nganne77?is_from_webapp=1&sender_device=pc" class=social-icon-sm title=TikTok><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83.0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89.0 01-5.2 1.74 2.89 2.89.0 012.31-4.64 2.93 2.93.0 01.88.13V9.4a6.84 6.84.0 00-1-.05A6.33 6.33.0 005 20.1a6.34 6.34.0 0010.86-4.43v-7a8.16 8.16.0 004.77 1.52v-3.4a4.85 4.85.0 01-1-.1z"/></svg>
+</a><a href="https://www.facebook.com/share/1W6XR4GnKL/?mibextid=wwXIfr" class=social-icon-sm title=Facebook><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312.0 2.686.235 2.686.235v2.953H15.83c-1.491.0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></div></div><div class=sidebar-widget><h3 class=widget-title>Bài viết mới nhất</h3><ul style=list-style:none;color:var(--text-secondary);font-size:.9rem><li style=margin-bottom:12px><a href=/ngandinh.github.io/posts/bai-viet-7/ style=color:var(--text-primary);font-weight:500;display:block;margin-bottom:4px>Bảo mật cơ bản trong lập trình mạng</a>
+<span style=font-size:.8rem;opacity:.6>23/12/2025</span></li><li style=margin-bottom:12px><a href=/ngandinh.github.io/posts/bai-viet-9/ style=color:var(--text-primary);font-weight:500;display:block;margin-bottom:4px>Định hướng học lập trình mạng với Java & JavaScript</a>
+<span style=font-size:.8rem;opacity:.6>23/12/2025</span></li><li style=margin-bottom:12px><a href=/ngandinh.github.io/posts/bai-viet-4/ style=color:var(--text-primary);font-weight:500;display:block;margin-bottom:4px>Giao thức HTTP và cách JavaScript giao tiếp với Server</a>
+<span style=font-size:.8rem;opacity:.6>23/12/2025</span></li><li style=margin-bottom:12px><a href=/ngandinh.github.io/posts/bai-viet-3/ style=color:var(--text-primary);font-weight:500;display:block;margin-bottom:4px>Lập trình Socket trong Java – Cơ bản</a>
+<span style=font-size:.8rem;opacity:.6>23/12/2025</span></li><li style=margin-bottom:12px><a href=/ngandinh.github.io/posts/bai-viet-2/ style=color:var(--text-primary);font-weight:500;display:block;margin-bottom:4px>Mô hình Client – Server trong lập trình mạng</a>
+<span style=font-size:.8rem;opacity:.6>23/12/2025</span></li></ul></div><div class=sidebar-widget><h3 class=widget-title>Chuyên mục</h3><ul style=list-style:none;color:var(--text-secondary);font-size:.9rem><li style=margin-bottom:12px;display:flex;justify-content:space-between><a href=/ngandinh.github.io/categories/client-server/ style=color:inherit;transition:var(--transition)>Client-Server</a>
+<span style=opacity:.5>(1)</span></li><li style=margin-bottom:12px;display:flex;justify-content:space-between><a href=/ngandinh.github.io/categories/development/ style=color:inherit;transition:var(--transition)>Development</a>
+<span style=opacity:.5>(4)</span></li><li style=margin-bottom:12px;display:flex;justify-content:space-between><a href=/ngandinh.github.io/categories/http/ style=color:inherit;transition:var(--transition)>HTTP</a>
+<span style=opacity:.5>(1)</span></li><li style=margin-bottom:12px;display:flex;justify-content:space-between><a href=/ngandinh.github.io/categories/java/ style=color:inherit;transition:var(--transition)>Java</a>
+<span style=opacity:.5>(2)</span></li><li style=margin-bottom:12px;display:flex;justify-content:space-between><a href=/ngandinh.github.io/categories/javascript/ style=color:inherit;transition:var(--transition)>JavaScript</a>
+<span style=opacity:.5>(2)</span></li><li style=margin-bottom:12px;display:flex;justify-content:space-between><a href=/ngandinh.github.io/categories/json/ style=color:inherit;transition:var(--transition)>JSON</a>
+<span style=opacity:.5>(1)</span></li><li style=margin-bottom:12px;display:flex;justify-content:space-between><a href=/ngandinh.github.io/categories/networking/ style=color:inherit;transition:var(--transition)>Networking</a>
+<span style=opacity:.5>(7)</span></li><li style=margin-bottom:12px;display:flex;justify-content:space-between><a href=/ngandinh.github.io/categories/realtime/ style=color:inherit;transition:var(--transition)>Realtime</a>
+<span style=opacity:.5>(1)</span></li><li style=margin-bottom:12px;display:flex;justify-content:space-between><a href=/ngandinh.github.io/categories/rest-api/ style=color:inherit;transition:var(--transition)>REST API</a>
+<span style=opacity:.5>(1)</span></li><li style=margin-bottom:12px;display:flex;justify-content:space-between><a href=/ngandinh.github.io/categories/security/ style=color:inherit;transition:var(--transition)>Security</a>
+<span style=opacity:.5>(1)</span></li><li style=margin-bottom:12px;display:flex;justify-content:space-between><a href=/ngandinh.github.io/categories/websocket/ style=color:inherit;transition:var(--transition)>WebSocket</a>
+<span style=opacity:.5>(1)</span></li></ul></div></aside></div></div><div id=scroll-to-top title="Lên đầu trang"><span style=font-size:1.5rem>↑</span></div><footer><div class="container footer-grid"><div class=footer-widget><div class=logo-group style=margin-bottom:1.5rem><div class=logo-icon>N</div><h1 style=font-size:1.1rem;font-weight:700;color:var(--accent-cyan);margin:0>ĐÌNH NGÂN IT
+BLOG</h1></div><p style=text-align:left;line-height:1.7>Chia sẻ kiến thức chuyên sâu về lập trình mạng, bảo mật
+và công nghệ. Nơi hành trình lập trình của bạn bắt đầu với tư duy hệ thống và chuyên nghiệp.</p><div class=footer-socials><a href=https://facebook.com/truongdinhngan.it class=social-icon-sm>FB</a>
+<a href=https://github.com/ngan-sua/ngandinh.github.io.git class=social-icon-sm>GH</a>
+<a href=https://tiktok.com/@dinhngan.it class=social-icon-sm>TT</a></div></div><div class=footer-widget><h4 style=color:var(--text-primary);margin-bottom:1.5rem;font-weight:700>Khám phá</h4><ul class=footer-links><li><a href=/>Trang chủ</a></li><li><a href=/ngandinh.github.io/about/>Giới thiệu bản thân</a></li><li><a href=/ngandinh.github.io/contact/>Liên hệ với mình</a></li><li><a href=/ngandinh.github.io/categories/>Chuyên mục bài viết</a></li></ul></div><div class=footer-widget><h4 style=color:var(--text-primary);margin-bottom:1.5rem;font-weight:700>Newsletter</h4><p style=text-align:left;margin-bottom:1.5rem>Nhận thông báo mới nhất về các bài viết lập trình
+mạng và bảo mật.</p><form style=display:flex;gap:8px><input type=email class=search-box placeholder="Email của bạn..." style="margin:0;background:rgba(255,255,255,5%);border:1px solid var(--border-color);padding:12px">
+<button class=btn-cert style="padding:0 20px;font-size:.8rem;height:42px">Gửi</button></form></div></div><div class=footer-bottom style="border-top:1px solid var(--border-color);padding:2rem 0;margin-top:4rem;opacity:.6;font-size:.85rem"><div class=container><p>&copy; 2025 ĐÌNH NGÂN BLOG - All Rights Reserved. Crafted with Passion.</p></div></div></footer><script src=https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js></script><script src=/ngandinh.github.io/js/script.js></script><script>AOS.init({duration:800,once:!0});const scrollToTopBtn=document.getElementById("scroll-to-top");window.onscroll=function(){document.body.scrollTop>300||document.documentElement.scrollTop>300?scrollToTopBtn.classList.add("visible"):scrollToTopBtn.classList.remove("visible")},scrollToTopBtn.onclick=function(){window.scrollTo({top:0,behavior:"smooth"})}</script></body></html>

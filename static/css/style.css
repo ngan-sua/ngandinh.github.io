@@ -16,18 +16,6 @@
     --cyan-glow: rgba(34, 211, 238, 0.15);
 }
 
-[data-theme="light"] {
-    --bg-main: #f8fafc;
-    --bg-card: #ffffff;
-    --bg-navbar: #f1f5f9;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
-    --border-color: rgba(0, 0, 0, 0.1);
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --cyan-glow: rgba(34, 211, 238, 0.2);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -116,33 +104,6 @@ header {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--text-secondary);
-}
-
-.theme-toggle {
-    background: transparent;
-    border: 1px solid var(--border-color);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary);
-    transition: var(--transition);
-}
-
-.theme-toggle:hover {
-    color: var(--accent-cyan);
-    background: rgba(34, 211, 238, 0.1);
-    border-color: var(--accent-cyan);
-    transform: rotate(15deg);
-}
-
-.theme-toggle svg {
-    width: 20px;
-    height: 20px;
 }
 
 .nav-links a:hover {
