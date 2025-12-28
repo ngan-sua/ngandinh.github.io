@@ -21,6 +21,8 @@ Mình là **Trương Đình Ngân**, hiện là **sinh viên năm cuối** chuy�
 Mình có định hướng học tập và nghiên cứu trong lĩnh vực **lập trình mạng** và **phát triển ứng dụng web**, đặc biệt quan tâm đến các công nghệ xoay quanh **Java** và **JavaScript**.  
 Trong quá trình học tập, mình luôn chú trọng việc hiểu bản chất cách **các hệ thống phần mềm giao tiếp với nhau qua mạng**, từ tầng giao thức đến triển khai ứng dụng thực tế.
 
+
+
 ##  Quá trình học tập
 
 Trong thời gian học tập tại HUTECH, mình đã tiếp cận và hoàn thành nhiều học phần nền tảng và chuyên ngành như:
@@ -108,5 +110,11 @@ Trong thời gian tới, mình đặt mục tiêu:
 
 - GitHub: https://github.com/username  
 - Email: ngan77pro@gmail.com  
+
+<div class="cert-link-wrapper">
+  <a href="../cv.pdf" target="_blank" class="btn-cert">
+    <span> Tải xuống CV của mình (PDF)</span>
+  </a>
+</div>
 
 Cảm ơn bạn đã ghé thăm blog của mình!
